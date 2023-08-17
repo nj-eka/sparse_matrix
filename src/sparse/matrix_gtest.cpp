@@ -8,20 +8,20 @@
 using namespace sparse;
 
 TEST(sparse_matrix, create_empty) {
-  sparse::Matrix<int, -1> matrix;
+  sparse::Matrix<int> matrix;
   ASSERT_EQ(matrix.size(), 0);
 }
 
 TEST(sparse_matrix, check_default_value) {
   constexpr int default_value = -1;
-  sparse::Matrix<int, default_value> matrix;
+  sparse::Matrix<int> matrix(default_value);
   ASSERT_EQ(matrix[0][0], default_value);
   ASSERT_EQ(matrix[1000][20000], default_value);
   ASSERT_EQ(matrix.size(), 0);
 }
 
 TEST(sparse_matrix, assign) {
-  sparse::Matrix<int, -1> m;
+  sparse::Matrix<int> m;
   m[100][100] = 314;
   ASSERT_EQ(m[100][100], 314);
   ASSERT_EQ(m.size(), 1);
@@ -29,7 +29,7 @@ TEST(sparse_matrix, assign) {
 
 TEST(sparse_matrix, default_value_assignmen) {
   constexpr int default_value = -1;
-  sparse::Matrix<int, default_value> matrix;
+  sparse::Matrix<int> matrix(default_value);
   ASSERT_EQ(matrix.size(), 0);
   matrix[100][100] = 314;
   ASSERT_EQ(matrix.size(), 1);
@@ -38,7 +38,7 @@ TEST(sparse_matrix, default_value_assignmen) {
 }
 
 TEST(sparse_matrix, iteration1) {
-  sparse::Matrix<int, -1> matrix;
+  sparse::Matrix<int> matrix;
   matrix[100][200] = 314;
   std::stringstream ss;
   for(auto const& cell: matrix)     
@@ -51,7 +51,7 @@ TEST(sparse_matrix, iteration1) {
 }
 
 TEST(sparse_matrix, iteration2) {
-  sparse::Matrix<int, -1> matrix;
+  sparse::Matrix<int> matrix;
   matrix[10][100] = 11;
   matrix[20][200] = 22;
   matrix[30][300] = 33;
@@ -74,7 +74,7 @@ TEST(sparse_matrix, reassignment) {
 
 TEST(sparse_matrix, dim1) {
   constexpr int default_value = -1;
-  sparse::Matrix<int, default_value, 1> matrix;
+  sparse::Matrix<int, 1> matrix(default_value);
   ASSERT_EQ(matrix[1000], default_value);
   ASSERT_EQ(matrix.size(), 0);
   matrix[100] = 314;
@@ -88,7 +88,7 @@ TEST(sparse_matrix, dim1) {
 
 TEST(sparse_matrix, dim3) {
   constexpr int default_value = -1;
-  sparse::Matrix<int, default_value, 3> matrix;
+  sparse::Matrix<int, 3> matrix(default_value);
   ASSERT_EQ(matrix[1000][2000][3000], default_value);
   ASSERT_EQ(matrix.size(), 0);
   matrix[1000][2000][3000] = 314;

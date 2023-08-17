@@ -3,7 +3,7 @@
 #include "sparse/matrix.hpp"
 
 int main() {
-  sparse::Matrix<int, 0> matrix;
+  sparse::Matrix<int> matrix;
   constexpr int n = 10;
   for (int i = 0; i < n; ++i) {
     matrix[i][i] = i;
