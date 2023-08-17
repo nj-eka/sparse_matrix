@@ -73,9 +73,9 @@ else()
 endif()
 # endif()
 
-if(NOT DEFAULT_VALUEINED GITVERSIONDETECT_VERSION)
+if(NOT DEFINED GITVERSIONDETECT_VERSION)
   set(GITVERSIONDETECT_VERSION 0.0.0-0-unknown)
-  message(WARNING "Failed to determine GITVERSIONDETECT_VERSION from Git tags. Using DEFAULT_VALUEault version \"${GITVERSIONDETECT_VERSION}\".")
+  message(WARNING "Failed to determine GITVERSIONDETECT_VERSION from Git tags. Using default version \"${GITVERSIONDETECT_VERSION}\".")
 endif()
 
 # Split the version into major, minor, patch and prerelease
