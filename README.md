@@ -53,8 +53,3 @@ for(auto c: matrix)
 - реализовать N-мерную матрицу. 
 - реализовать каноническую форму оператора `=`, допускающую выражения 
 `((matrix[100][100] = 314) = 0) = 217` 
-
-# Implementation
-
-- [](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_(CSR,%20_CRS_or_Yale_format))
-- [Sparse Matrix Code Dependence Analysis Simplification at Compile Time arXiv:1807.10852v1 [cs.PL] 27 Jul 2018](https://arxiv.org/pdf/1807.10852.pdf)
