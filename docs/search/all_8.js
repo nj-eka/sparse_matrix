@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['operator_20t_0',['operator T',['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a3b3bce1279ec865fc664df12efeb5096',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;']]],
-  ['operator_3c_3c_1',['operator&lt;&lt;',['../structsparse_1_1Matrix.html#a5186a74f5bbfd9be79760421a88becd3',1,'sparse::Matrix']]],
-  ['operator_3d_2',['operator=',['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a49a4411dc4395023e5cfda0fe17730f8',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;::operator=(T &amp;&amp;value)'],['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a3eea36edbd5ebedb99b1936b61ada8d7',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;::operator=(T const &amp;value)']]],
-  ['operator_5b_5d_3',['operator[]',['../classsparse_1_1details_1_1ShiftIndex.html#a7265c66f6b0a81cd74beac1e82f7a3ec',1,'sparse::details::ShiftIndex::operator[]()'],['../structsparse_1_1Matrix.html#a507f85d5ea9c6fbc88f29cd62671b90c',1,'sparse::Matrix::operator[]()']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['matrix_2',['Matrix',['../structsparse_1_1Matrix.html#ac5fa24cf70a15e5727dd78f4f336e211',1,'sparse::Matrix::Matrix(T const &amp;default_value=T{}) noexcept(noexcept(T(default_value)))'],['../structsparse_1_1Matrix.html#af0ce7956a8f4a3bcc8b1127e088af3a8',1,'sparse::Matrix::Matrix(T &amp;&amp;default_value) noexcept(noexcept(T(std::forward&lt; T const &gt;(default_value))))'],['../structsparse_1_1Matrix.html',1,'sparse::Matrix&lt; T, N_DIMS &gt;']]],
+  ['matrix_2ehpp_3',['matrix.hpp',['../matrix_8hpp.html',1,'']]],
+  ['matrix_5fgtest_2ecpp_4',['matrix_gtest.cpp',['../matrix__gtest_8cpp.html',1,'']]]
 ];

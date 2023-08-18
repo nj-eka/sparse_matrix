@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['begin_0',['begin',['../structsparse_1_1Matrix.html#a54ba1922438baa435fa2480080f32873',1,'sparse::Matrix']]]
+  ['begin_0',['begin',['../structsparse_1_1Matrix.html#a36a6c5bdb41107cfcad0e55a05d8a4ed',1,'sparse::Matrix']]]
 ];

@@ -1,5 +1,7 @@
 <map id="sparse::Matrix&lt; T, N_DIMS &gt;" name="sparse::Matrix&lt; T, N_DIMS &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="38,104,166,155"/>
-<area shape="rect" id="Node000002" href="$structsparse_1_1details_1_1CellAccessor.html" title=" " alt="" coords="5,5,199,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,71,105,103,99,103,99,71"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="102,225,222,580"/>
+<area shape="rect" id="Node000002" href="$structsparse_1_1details_1_1CellAccessor.html" title=" " alt="" coords="5,5,191,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,171,129,225,124,226,113,172"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="215,41,237,122"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,122,203,209,198,208,216,121"/>
 </map>

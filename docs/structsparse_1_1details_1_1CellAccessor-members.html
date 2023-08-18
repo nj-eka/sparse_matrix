@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-5-g3c13e8b-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-7-g711fb74-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('structsparse_1_1details_1_1CellAccesso
 
 <p>This is the complete list of members for <a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#a8b07c2dc3df727eb047ee02d43db3886">get</a>(IndexType&lt; N_DIMS &gt; const &amp;) const =0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#ae9bfefc2935c71d593450e9b1ccd3975">set</a>(IndexType&lt; N_DIMS &gt; const &amp;, T &amp;&amp;)=0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#abda191962fc1fcecfebbeb7ed5a3a4ad">set</a>(IndexType&lt; N_DIMS &gt; const &amp;, const T &amp;)=0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#a0378c30204655da1e24ea23cd315e129">get</a>(IndexType&lt; N_DIMS &gt; const &amp;) const noexcept=0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#ade2b37e8f2b31c0a955e3ac7ebbf82c7">set</a>(IndexType&lt; N_DIMS &gt; const &amp;idx, const T &amp;value) noexcept(noexcept(T(value)))=0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#acc6ff3219d50323bc4695bd693743788">set</a>(IndexType&lt; N_DIMS &gt; const &amp;idx, T &amp;&amp;value) noexcept(noexcept(T(std::forward&lt; T &gt;(value))))=0</td><td class="entry"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor&lt; T, N_DIMS &gt;</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
