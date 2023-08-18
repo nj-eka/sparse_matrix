@@ -9,11 +9,6 @@
 
 namespace sparse {
 
-namespace details {
-template <typename T, size_t N_DIMS = 2>
-struct CellAccessor;
-}
-
 template <typename T, size_t N_DIMS = 2>
 struct Matrix;
 
