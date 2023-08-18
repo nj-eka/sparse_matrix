@@ -58,6 +58,7 @@ if(BUILD_TESTING)
         hw6_gtest
         PRIVATE
             ${GTEST_INCLUDE_DIRS}
+            "${CMAKE_CURRENT_SOURCE_DIR}/src"            
     )
     target_link_libraries(
         hw6_gtest

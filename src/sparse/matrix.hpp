@@ -5,14 +5,24 @@
 #include <ostream>
 #include <utility>
 
+#include "utils/logging.hpp"
+
 namespace sparse {
 
 namespace details {
-
-template <size_t N_DIMS = 2>
-using IndexType = std::array<size_t, N_DIMS>;
+template <typename T, size_t N_DIMS = 2>
+struct CellAccessor;
+}
 
 template <typename T, size_t N_DIMS = 2>
+struct Matrix;
+
+namespace details {
+
+template <size_t N_DIMS>
+using IndexType = std::array<size_t, N_DIMS>;
+
+template <typename T, size_t N_DIMS>
 struct CellAccessor {
   virtual T const& get(IndexType<N_DIMS> const&) const = 0;
   virtual void set(IndexType<N_DIMS> const&, T&&) = 0;
@@ -21,27 +31,39 @@ struct CellAccessor {
 
 template <typename T, size_t N_DIMS, size_t DIM>
 class ShiftIndex {
+  ShiftIndex(ShiftIndex const&) = delete;
+  ShiftIndex& operator=(ShiftIndex const&) = delete;
+
   CellAccessor<T, N_DIMS>* _cell;
   IndexType<DIM + 1> _idx;
 
- public:
   ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexType<DIM> idx) : _cell{cell} {
     std::copy(std::begin(idx), std::end(idx), std::begin(_idx));
+    LOG_PPF;
   }
+
+ public:
   auto operator[](size_t last_idx) {
+    LOG_PPF;
     _idx[DIM] = last_idx;
     return ShiftIndex<T, N_DIMS, DIM + 1>(_cell, _idx);
   }
+  friend struct ShiftIndex<T, N_DIMS, DIM - 1>;
+  friend struct sparse::Matrix<T, N_DIMS>;
 };
 
 template <typename T, size_t N_DIMS>
 class ShiftIndex<T, N_DIMS, N_DIMS> {
+  ShiftIndex(ShiftIndex const&) = delete;
+  ShiftIndex& operator=(ShiftIndex const&) = delete;
+
   CellAccessor<T, N_DIMS>* _cell;
   std::array<size_t, N_DIMS> const _idx;
 
- public:
   ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexType<N_DIMS> const& idx)
       : _cell{cell}, _idx{idx} {}
+
+ public:
   auto& operator=(T&& value) {
     _cell->set(_idx, std::forward<T>(value));
     return *this;
@@ -51,11 +73,14 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
     return *this;
   }
   operator T() const { return _cell->get(_idx); }
+
+  friend struct ShiftIndex<T, N_DIMS, N_DIMS - 1>;
+  friend struct sparse::Matrix<T, N_DIMS>;
 };
 
 }  // namespace details
 
-template <typename T, size_t N_DIMS = 2>
+template <typename T, size_t N_DIMS>
 struct Matrix final : details::CellAccessor<T, N_DIMS> {
   using IndexType = details::IndexType<N_DIMS>;
   using HeadIndexType = details::IndexType<1>;
@@ -92,6 +117,7 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
       _map[idx] = value;
   }
   auto operator[](size_t idx1) {
+    LOG_PPF;
     HeadIndexType headIndex = {idx1};
     return HeadShiftIndex(this, headIndex);
   }
