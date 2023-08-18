@@ -1,7 +1,8 @@
 # sparse_matrix
 course c++ developer: hw6 - sparse matrix
 
-## Задание 6  
+## Задание 6 
+- [pdf](06_homework.pdf)
 
 ### Основные требования
 - Спроектировать 2-мерную разреженную бесконечную матрицу, заполненную значениями по умолчанию. 
@@ -14,7 +15,7 @@ course c++ developer: hw6 - sparse matrix
 - При чтении элемента из свободной ячейки возвращать значение по умолчанию.
 
 ### Пример:
-
+```cpp
 // бесконечная матрица int заполнена значениями -1     
 Matrix<int, -1> matrix;     
 assert(matrix.size() == 0); // все ячейки свободны       
@@ -37,7 +38,7 @@ for(auto c: matrix)
 	std::tie(x, y, v) = c;
 	std::cout << x << y << v << std::endl;     
 }
-
+```
 ### Main
 - При запуске программы необходимо 
 	- создать матрицу с пустым значением 0, 
@@ -52,4 +53,31 @@ for(auto c: matrix)
 ### Опционально: 
 - реализовать N-мерную матрицу. 
 - реализовать каноническую форму оператора `=`, допускающую выражения 
-`((matrix[100][100] = 314) = 0) = 217` 
+```cpp
+((matrix[100][100] = 314) = 0) = 217
+```
+
+## Решение
+### Install
+```bash
+> git clone https://github.com/nj-eka/sparse_matrix.git
+> cd sparse_matrix
+
+# configurate
+> cmake -B ./build -S . \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -DBUILD_TESTING=ON \
+    -DCMAKE_CXX_FLAGS="-g -O0 -fsanitize=undefined -fsanitize=address -fsanitize=leak -fno-omit-frame-pointer"
+
+# build
+> cmake --build ./build
+
+# run tests
+> ctest --test-dir build -T Test --verbose
+
+# install (* skipped)
+> cmake --build ./build --target install
+
+# run hw6
+> sparse_matrix
+```
