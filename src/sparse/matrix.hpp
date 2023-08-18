@@ -9,25 +9,28 @@ namespace sparse {
 
 namespace details {
 
+template <size_t N_DIMS = 2>
+using IndexType = std::array<size_t, N_DIMS>;
+
 template <typename T, size_t N_DIMS = 2>
 struct CellAccessor {
-  virtual T const& get(std::array<size_t, N_DIMS> const&) const = 0;
-  virtual void set(std::array<size_t, N_DIMS> const&, T &&) = 0;
-  virtual void set(std::array<size_t, N_DIMS> const&, const T &) = 0;
+  virtual T const& get(IndexType<N_DIMS> const&) const = 0;
+  virtual void set(IndexType<N_DIMS> const&, T&&) = 0;
+  virtual void set(IndexType<N_DIMS> const&, const T&) = 0;
 };
 
 template <typename T, size_t N_DIMS, size_t DIM>
 class ShiftIndex {
   CellAccessor<T, N_DIMS>* _cell;
-  // todo: try to optimize the index transfer while avoiding some side effects (described in [Sparse Matrix Code Dependence Analysis Simplification at Compile Time])
-  std::array<size_t, DIM + 1> _idx;
-public:
-  ShiftIndex(CellAccessor<T, N_DIMS>* cell, std::array<size_t, DIM> idx) : _cell{cell} {
+  IndexType<DIM + 1> _idx;
+
+ public:
+  ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexType<DIM> idx) : _cell{cell} {
     std::copy(std::begin(idx), std::end(idx), std::begin(_idx));
   }
   auto operator[](size_t last_idx) {
     _idx[DIM] = last_idx;
-    return ShiftIndex<T, N_DIMS, DIM+1>(_cell, _idx);
+    return ShiftIndex<T, N_DIMS, DIM + 1>(_cell, _idx);
   }
 };
 
@@ -35,78 +38,79 @@ template <typename T, size_t N_DIMS>
 class ShiftIndex<T, N_DIMS, N_DIMS> {
   CellAccessor<T, N_DIMS>* _cell;
   std::array<size_t, N_DIMS> const _idx;
-public:
-  ShiftIndex(CellAccessor<T, N_DIMS>* cell, std::array<size_t, N_DIMS> const& idx) : _cell{cell}, _idx{idx} {}
-  auto& operator=(T &&value){
+
+ public:
+  ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexType<N_DIMS> const& idx)
+      : _cell{cell}, _idx{idx} {}
+  auto& operator=(T&& value) {
     _cell->set(_idx, std::forward<T>(value));
     return *this;
   }
-  auto& operator=(T const& value){
+  auto& operator=(T const& value) {
     _cell->set(_idx, value);
     return *this;
   }
-  operator T() const
-  {
-    return _cell->get(_idx);
-  }
+  operator T() const { return _cell->get(_idx); }
 };
 
-} // namespace details
+}  // namespace details
 
 template <typename T, size_t N_DIMS = 2>
-class Matrix: public details::CellAccessor<T, N_DIMS> {
-  std::map<std::array<size_t, N_DIMS>, T> _map;
+struct Matrix final : details::CellAccessor<T, N_DIMS> {
+  using IndexType = details::IndexType<N_DIMS>;
+  using HeadIndexType = details::IndexType<1>;
+  using HeadShiftIndex = details::ShiftIndex<T, N_DIMS, 1>;
+  using const_iterator = typename std::map<IndexType, T>::const_iterator;
+
+ private:
+  std::map<IndexType, T> _map;
   T const _default;
+
  public:
-  using const_iterator = typename std::map<std::array<size_t, N_DIMS>, T>::const_iterator;
-  using ZeroShiftIndex = details::ShiftIndex<T, N_DIMS, 1>;
-
-  Matrix(const T& default_value = T{}): _default{default_value} {};
-
-  T const& get(std::array<size_t, N_DIMS> const& idx) const override {
+  Matrix(const T& default_value = T{}) : _default{default_value} {}
+  T const& get(IndexType const& idx) const override {
     auto const& it = _map.find(idx);
     if (it == _map.end()) {
       return _default;
     }
     return it->second;
   }
-  void set(std::array<size_t, N_DIMS> const& idx, T &&value) override {
-    if (value == _default){
+  void set(IndexType const& idx, T&& value) override {
+    if (value == _default) {
       _map.erase(idx);
     } else {
-      // _map.emplace(std::piecewise_construct, std::forward_as_tuple(idx), std::forward_as_tuple(value)); // T::T(const T&)
-      // _map.try_emplace(idx, value); // T::T(const T&)
-      _map.insert_or_assign(idx, std::forward<T>(value)); // insert = 1) T::T(&&) + 2) T& T::operator=(const T&) assign = T& T::operator=(const T&) + T::T(const T&)
+      // _map.emplace(std::piecewise_construct, std::forward_as_tuple(idx),
+      // std::forward_as_tuple(value)); T::T(const T&) _map.try_emplace(idx,
+      // value);
+      _map.insert_or_assign(idx, std::forward<T>(value));
     }
   }
-  void set(std::array<size_t, N_DIMS> const& idx, const T &value) override {
+  void set(IndexType const& idx, const T& value) override {
     if (value == _default)
       _map.erase(idx);
     else
       _map[idx] = value;
   }
-
   auto operator[](size_t idx1) {
-    std::array<size_t, 1> shiftIndex;
-    shiftIndex[0] = idx1;
-    return ZeroShiftIndex(this, shiftIndex);
+    HeadIndexType headIndex = {idx1};
+    return HeadShiftIndex(this, headIndex);
   }
   size_t size() const { return _map.size(); }
 
   const_iterator begin() const { return _map.cbegin(); }
   const_iterator end() const { return _map.cend(); }
+  const_iterator cbegin() const { return _map.cbegin(); }
+  const_iterator cend() const { return _map.cend(); }
 
-  friend std::ostream& operator<<(std::ostream& out, Matrix const & matrix) {
-    for (auto const &cell : matrix) {
+  friend std::ostream& operator<<(std::ostream& out, Matrix const& matrix) {
+    for (auto const& cell : matrix) {
       auto const& [idx, value] = cell;
       out << "[" << idx[0];
-      for (size_t i = 1; i < N_DIMS; ++i)
-        out << "," << idx[i];
+      for (size_t i = 1; i < N_DIMS; ++i) out << "," << idx[i];
       out << "]=" << value << "\n";
     }
     return out;
   }
-
 };
 
 }  // namespace sparse
