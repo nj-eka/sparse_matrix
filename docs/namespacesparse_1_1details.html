@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-7-g711fb74-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-9-gabc9ccd-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -112,6 +112,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
 <tr class="memitem:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a> = std::array&lt; size_t, N_DIMS &gt;</td></tr>
 <tr class="separator:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b0c65af3c3d856047b79abb8a963e19"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
+<tr class="memitem:a0b0c65af3c3d856047b79abb8a963e19"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a0b0c65af3c3d856047b79abb8a963e19">IndexTypeShared</a> = std::shared_ptr&lt; <a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt; N_DIMS &gt; &gt;</td></tr>
+<tr class="separator:a0b0c65af3c3d856047b79abb8a963e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0493fab35498a3a6e6f51611f2fc219e"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
+<tr class="memitem:a0493fab35498a3a6e6f51611f2fc219e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a0493fab35498a3a6e6f51611f2fc219e">IndexTypeConstShared</a> = std::shared_ptr&lt; <a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt; N_DIMS &gt; const  &gt;</td></tr>
+<tr class="separator:a0493fab35498a3a6e6f51611f2fc219e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a7b1ddb384c6aa6b9a7daab6f0a3719fe" name="a7b1ddb384c6aa6b9a7daab6f0a3719fe"></a>
@@ -128,7 +134,43 @@ template&lt;size_t N_DIMS&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00020">20</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00021">21</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0493fab35498a3a6e6f51611f2fc219e" name="a0493fab35498a3a6e6f51611f2fc219e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0493fab35498a3a6e6f51611f2fc219e">&#9670;&#160;</a></span>IndexTypeConstShared</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N_DIMS&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacesparse_1_1details.html#a0493fab35498a3a6e6f51611f2fc219e">sparse::details::IndexTypeConstShared</a> = typedef std::shared_ptr&lt;<a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt;N_DIMS&gt; const&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00027">27</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b0c65af3c3d856047b79abb8a963e19" name="a0b0c65af3c3d856047b79abb8a963e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b0c65af3c3d856047b79abb8a963e19">&#9670;&#160;</a></span>IndexTypeShared</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N_DIMS&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacesparse_1_1details.html#a0b0c65af3c3d856047b79abb8a963e19">sparse::details::IndexTypeShared</a> = typedef std::shared_ptr&lt;<a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt;N_DIMS&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00024">24</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 </div>
 </div>

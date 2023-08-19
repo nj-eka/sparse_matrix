@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-7-g711fb74-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-9-gabc9ccd-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -101,14 +101,15 @@ $(document).ready(function(){initNavTree('matrix_8hpp.html',''); initResizable()
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="logging_8hpp_source.html">utils/logging.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for matrix.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="matrix_8hpp__incl.svg" width="644" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="matrix_8hpp__incl.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -141,6 +142,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
 <tr class="memitem:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">sparse::details::IndexType</a> = std::array&lt; size_t, N_DIMS &gt;</td></tr>
 <tr class="separator:a7b1ddb384c6aa6b9a7daab6f0a3719fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b0c65af3c3d856047b79abb8a963e19"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
+<tr class="memitem:a0b0c65af3c3d856047b79abb8a963e19"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a0b0c65af3c3d856047b79abb8a963e19">sparse::details::IndexTypeShared</a> = std::shared_ptr&lt; <a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt; N_DIMS &gt; &gt;</td></tr>
+<tr class="separator:a0b0c65af3c3d856047b79abb8a963e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0493fab35498a3a6e6f51611f2fc219e"><td class="memTemplParams" colspan="2">template&lt;size_t N_DIMS&gt; </td></tr>
+<tr class="memitem:a0493fab35498a3a6e6f51611f2fc219e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesparse_1_1details.html#a0493fab35498a3a6e6f51611f2fc219e">sparse::details::IndexTypeConstShared</a> = std::shared_ptr&lt; <a class="el" href="namespacesparse_1_1details.html#a7b1ddb384c6aa6b9a7daab6f0a3719fe">IndexType</a>&lt; N_DIMS &gt; const  &gt;</td></tr>
+<tr class="separator:a0493fab35498a3a6e6f51611f2fc219e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
