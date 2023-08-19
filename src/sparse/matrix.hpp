@@ -108,8 +108,8 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
 
  public:
   // ctor
-  Matrix(T const& default_value = T{}) noexcept(noexcept(T(default_value))) : _default{default_value} {}
-  Matrix(T&& default_value) noexcept(noexcept(T(std::forward<T>(default_value))))
+  Matrix(T const& default_value) noexcept(noexcept(T(default_value))) : _default{default_value} {}
+  Matrix(T&& default_value = T{}) noexcept(noexcept(T(std::forward<T>(default_value))))
       : _default{std::forward<T>(default_value)} {}
   Matrix(Matrix const& other) : _map(other._map), _default(other._default) {}
   Matrix(Matrix&& other) { swap(std::forward<T>(other)); }
