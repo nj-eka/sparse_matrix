@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 
 file(GLOB MODULE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/cmake/*/" LIST_DIRECTORIES true)
 list(APPEND CMAKE_MODULE_PATH "${MODULE_DIRS}")
@@ -76,7 +77,7 @@ if(BUILD_TESTING)
         target_compile_options(
             hw6_gtest
             PRIVATE
-                -Wall -Wextra -pedantic -Werror
+                -Wall -Wextra -pedantic
         )
     endif(MSVC)  
 endif(BUILD_TESTING)

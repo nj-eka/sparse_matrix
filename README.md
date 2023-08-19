@@ -81,3 +81,7 @@ for(auto c: matrix)
 # run hw6
 > sparse_matrix
 ```
+
+### details
+- [class diagram](puml/class_diagram.svg)
+- [sequence diagram](puml/sequence_diagram.svg)
