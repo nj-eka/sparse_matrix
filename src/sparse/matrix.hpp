@@ -155,7 +155,7 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
   }
 
   // ShiftIndex
-  auto operator[](size_t idx1) {
+  HeadShiftIndex operator[](size_t idx1) {
     LOG_PPF;
     return HeadShiftIndex(this, details::IndexTypeShared<N_DIMS>(new IndexType{idx1}));
   }
