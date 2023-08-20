@@ -44,16 +44,16 @@ struct CellAccessor {
 };
 
 template <std::copyable T, size_t N_DIMS>
-class ShiftIndex {
+class ProxyCell {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
 
   CellAccessor<T, N_DIMS>* _cell;  // no shared_ptr cuz Matrix object is created at stack as usual
   IndexTypeConstShared<N_DIMS> const _idx;
 
-  ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexTypeShared<N_DIMS> idx) noexcept : _cell{cell}, _idx{idx} {}
+  ProxyCell(CellAccessor<T, N_DIMS>* cell, IndexTypeShared<N_DIMS> idx) noexcept : _cell{cell}, _idx{idx} {}
 
-  ShiftIndex(ShiftIndex const&) = delete;
-  ShiftIndex& operator=(ShiftIndex const&) = delete;
+  ProxyCell(ProxyCell const&) = delete;
+  ProxyCell& operator=(ProxyCell const&) = delete;
 
   friend struct Matrix<T, N_DIMS>;
 
@@ -135,7 +135,7 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
     return get(index);
   }
 
-  details::ShiftIndex<T, N_DIMS> operator[](size_t first...) {
+  details::ProxyCell<T, N_DIMS> operator[](size_t first...) {
     LOG_PPF;
     va_list args;
     va_start(args, first);
@@ -144,7 +144,7 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
       (*sp_index)[i] = va_arg(args, size_t);
     }
     va_end(args);
-    return details::ShiftIndex<T, N_DIMS>(this, sp_index);
+    return details::ProxyCell<T, N_DIMS>(this, sp_index);
   }
   ///@}
 
