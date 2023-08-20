@@ -15,6 +15,12 @@ namespace sparse {
 template <std::copyable T, size_t N_DIMS = 2>
 struct Matrix;
 
+/**
+ * @brief for internal use by Matrix class
+ * @details
+ * namespace contains implementation details of public Matrix class that are subjects to change
+ * and not intendeed for use ouside this context
+ */
 namespace details {
 
 template <size_t N_DIMS>
@@ -52,7 +58,7 @@ class ShiftIndex {
   friend struct sparse::Matrix<T, N_DIMS>;
 
  public:
-  auto operator[](size_t last_idx) noexcept {
+  ShiftIndex<T, N_DIMS, DIM + 1> operator[](size_t last_idx) noexcept {
     (*_idx)[DIM] = last_idx;  // m[]...[] - only in this way it is supposed to be used
     return ShiftIndex<T, N_DIMS, DIM + 1>(_cell, _idx);
   }
@@ -75,11 +81,11 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
 
  public:
   operator T() const noexcept { return _cell->get(_idx); }
-  auto& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
+  ShiftIndex<T, N_DIMS, N_DIMS>& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
     _cell->set(_idx, std::forward<T>(value));
     return *this;
   }
-  auto& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
+  ShiftIndex<T, N_DIMS, N_DIMS>& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
     _cell->set(_idx, value);
     return *this;
   }
@@ -87,6 +93,22 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
 
 }  // namespace details
 
+/**
+ * @brief sparse matrix with `N_DIMS` "infinite" dimensions
+ *
+ * @note Usage examlple:
+ *
+ *    Matrix<int, 3> m(-1);
+ *    m[100][200][300] = 1;
+ *    assert(m[100][200][300] == 1);
+ *    assert(m[1][2][3] == -1);
+ *    assert(m.size() == 1);
+ *    m[100][200][300] = -1;
+ *    assert(m.size() == 0);
+ *
+ * @tparam T copyable type of matrix element
+ * @tparam N_DIMS number of matrix dimensions (>= 1)
+ */
 template <std::copyable T, size_t N_DIMS>
 struct Matrix final : details::CellAccessor<T, N_DIMS> {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
@@ -98,7 +120,9 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
   using const_iterator = typename std::map<IndexType, T>::const_iterator;
 
  private:
-  std::map<IndexType, T> _map;  // matrix elements should be ordered by task
+  std::map<IndexType, T> _map; /**<
+ std::map is used to store elements because matrix iterator outputs elemenets sorted by index.
+ */
   T _default;
 
   void swap(Matrix&& other) noexcept {
@@ -107,14 +131,17 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
   }
 
  public:
-  // ctor
+  /** @name ctor */
+  ///@{
   Matrix(T const& default_value) noexcept(noexcept(T(default_value))) : _default{default_value} {}
   Matrix(T&& default_value = T{}) noexcept(noexcept(T(std::forward<T>(default_value))))
       : _default{std::forward<T>(default_value)} {}
   Matrix(Matrix const& other) : _map(other._map), _default(other._default) {}
-  Matrix(Matrix&& other) { swap(std::forward<T>(other)); }
+  Matrix(Matrix&& other) noexcept { swap(std::forward<T>(other)); }
+  ///@}
 
-  // assignment
+  /** @name assignment */
+  ///@{
   Matrix& operator=(Matrix const& other) {
     if (this != &other) {
       _map = other._map;          // copy-assignment
@@ -126,8 +153,10 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
     swap(std::forward<T>(other));
     return *this;
   }
+  ///@}
 
-  // details::CellAccessor impl
+  /** @name details::CellAccessor */
+  ///@{
   T const& get(IndexTypeConstShared idx) const noexcept override {
     auto const& it = _map.find(*idx.get());
     if (it == _map.end()) {
@@ -153,23 +182,31 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
       _map.insert_or_assign(*idx.get(), std::forward<T>(value));
     }
   }
+  ///@}
 
-  // ShiftIndex
+  /** @name index */
+  ///@{
   HeadShiftIndex operator[](size_t idx1) {
     LOG_PPF;
     return HeadShiftIndex(this, details::IndexTypeShared<N_DIMS>(new IndexType{idx1}));
   }
+  ///@}
 
-  // misc
+  /** @name misc */
+  ///@{
   size_t size() const noexcept { return _map.size(); }
+  ///@}
 
-  // iter
+  /** @name iter */
+  ///@{
   const_iterator begin() const noexcept { return _map.cbegin(); }
   const_iterator end() const noexcept { return _map.cend(); }
   const_iterator cbegin() const noexcept { return _map.cbegin(); }
   const_iterator cend() const noexcept { return _map.cend(); }
+  ///@}
 
-  // friends
+  /** @name friends */
+  ///@{
   friend std::ostream& operator<<(std::ostream& out, Matrix const& matrix) {
     for (auto const& cell : matrix) {
       auto const& [idx, value] = cell;
@@ -179,6 +216,7 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
     }
     return out;
   }
+  ///@}
 };
 
 }  // namespace sparse
