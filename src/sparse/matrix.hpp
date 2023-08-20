@@ -15,6 +15,9 @@ namespace sparse {
 template <std::copyable T, size_t N_DIMS = 2>
 struct Matrix;
 
+template <size_t N_DIMS>
+using IndexType = std::array<size_t, N_DIMS>;
+
 /**
  * @brief for internal use by Matrix class
  * @details
@@ -22,9 +25,6 @@ struct Matrix;
  * and not intendeed for use ouside this context
  */
 namespace details {
-
-template <size_t N_DIMS>
-using IndexType = std::array<size_t, N_DIMS>;
 
 template <size_t N_DIMS>
 using IndexTypeShared = std::shared_ptr<IndexType<N_DIMS>>;
@@ -96,7 +96,6 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
 /**
  * @brief sparse matrix with `N_DIMS` "infinite" dimensions
  *
- * @note Usage examlple:
  * @code {.cpp}
  *    Matrix<int, 3> m(-1);
  *    m[100][200][300] = 1;
@@ -106,32 +105,22 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  *    m[100][200][300] = -1;
  *    assert(m.size() == 0);
  * @endcode
+ * @note: `default_value` is moved from template parameters list to class member list
+ *        to make it possible to assign matrix with diffrent `default_value`
+ *        to expand possible applying.
  *
  * @tparam T copyable type of matrix element
  * @tparam N_DIMS number of matrix dimensions (>= 1)
  */
 template <std::copyable T, size_t N_DIMS>
-struct Matrix final : details::CellAccessor<T, N_DIMS> {
+struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
 
-  using IndexType = details::IndexType<N_DIMS>;
   using IndexTypeConstShared = details::IndexTypeConstShared<N_DIMS>;
   using HeadShiftIndex = details::ShiftIndex<T, N_DIMS, 1>;
 
-  using const_iterator = typename std::map<IndexType, T>::const_iterator;
+  using const_iterator = typename std::map<IndexType<N_DIMS>, T>::const_iterator;
 
- private:
-  std::map<IndexType, T> _map; /**<
- std::map is used to store elements because matrix iterator outputs elemenets sorted by index.
- */
-  T _default;
-
-  void swap(Matrix&& other) noexcept {
-    std::swap(_map, other._map);
-    std::swap(_default, other._default);
-  }
-
- public:
   /** @name ctor */
   ///@{
   Matrix(T const& default_value) noexcept(noexcept(T(default_value))) : _default{default_value} {}
@@ -156,40 +145,37 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
   }
   ///@}
 
-  /** @name details::CellAccessor */
+  /** @name head_index */
   ///@{
-  T const& get(IndexTypeConstShared idx) const noexcept override {
-    auto const& it = _map.find(*idx.get());
+  HeadShiftIndex operator[](size_t idx1) {
+    LOG_PPF;
+    return HeadShiftIndex(this, details::IndexTypeShared<N_DIMS>(new IndexType<N_DIMS>{idx1}));
+  }
+  ///@}
+
+  /** @name element_getter_setter */
+  ///@{
+  T const& get(IndexType<N_DIMS> const& idx) const noexcept {
+    auto const& it = _map.find(idx);
     if (it == _map.end()) {
       return _default;
     }
     return it->second;
   }
-  void set(IndexTypeConstShared idx, T const& value) noexcept(noexcept(T(value))) override {
-    if (value == _default) {
-      _map.erase(*idx.get());
-    } else {
-      // _map[idx] = value;
-      _map.insert_or_assign(*idx.get(), value);
-    }
+  void set(IndexType<N_DIMS> const& idx, T const& value) noexcept(noexcept(T(value))) {
+    if (value == _default)
+      _map.erase(idx);
+    else
+      _map.insert_or_assign(idx, value);
   }
-  void set(IndexTypeConstShared idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) override {
-    if (value == _default) {
-      _map.erase(*idx.get());
-    } else {
-      // _map.emplace(std::piecewise_construct, std::forward_as_tuple(idx),
-      // std::forward_as_tuple(value)); T::T(const T&) _map.try_emplace(idx,
-      // value);
-      _map.insert_or_assign(*idx.get(), std::forward<T>(value));
-    }
-  }
-  ///@}
-
-  /** @name index */
-  ///@{
-  HeadShiftIndex operator[](size_t idx1) {
-    LOG_PPF;
-    return HeadShiftIndex(this, details::IndexTypeShared<N_DIMS>(new IndexType{idx1}));
+  void set(IndexType<N_DIMS> const& idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) {
+    if (value == _default)
+      _map.erase(idx);
+    else
+      _map.insert_or_assign(idx, std::forward<T>(value)); /**< alternatives for insert (not assign):
+        _map.emplace(std::piecewise_construct, std::forward_as_tuple(idx), std::forward_as_tuple(value));
+        _map.try_emplace(idx, std::forward<T>(value));
+      */
   }
   ///@}
 
@@ -216,6 +202,25 @@ struct Matrix final : details::CellAccessor<T, N_DIMS> {
       out << "]=" << value << "\n";
     }
     return out;
+  }
+  ///@}
+
+ private:
+  std::map<IndexType<N_DIMS>, T> _map; /**< std::map is used to store elements because matrix iterator outputs elemenets
+                                  sorted by index as required. */
+  T _default;
+
+  void swap(Matrix&& other) noexcept {
+    std::swap(_map, other._map);
+    std::swap(_default, other._default);
+  }
+
+  /** @name details::CellAccessor */
+  ///@{
+  T const& get(IndexTypeConstShared idx) const noexcept override { return get(*idx.get()); }
+  void set(IndexTypeConstShared idx, T const& value) noexcept(noexcept(T(value))) override { set(*idx.get(), value); }
+  void set(IndexTypeConstShared idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) override {
+    set(*idx.get(), std::forward<T>(value));
   }
   ///@}
 };

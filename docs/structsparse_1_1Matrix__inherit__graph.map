@@ -1,5 +1,5 @@
 <map id="sparse::Matrix&lt; T, N_DIMS &gt;" name="sparse::Matrix&lt; T, N_DIMS &gt;">
-<area shape="rect" id="Node000001" title="sparse matrix with N_DIMS &quot;infinite&quot; dimensions" alt="" coords="38,205,158,1117"/>
+<area shape="rect" id="Node000001" title="sparse matrix with N_DIMS &quot;infinite&quot; dimensions" alt="" coords="38,205,158,1143"/>
 <area shape="rect" id="Node000002" href="$structsparse_1_1details_1_1CellAccessor.html" title=" " alt="" coords="5,5,191,157"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,172,101,205,95,205,95,172"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,171,101,206,95,206,95,171"/>
 </map>

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrix_2',['Matrix',['../structsparse_1_1Matrix.html#a3e88346d3f6b6371079ff3ade4d62c75',1,'sparse::Matrix::Matrix(T const &amp;default_value) noexcept(noexcept(T(default_value)))'],['../structsparse_1_1Matrix.html#af2fe5cd3536ce03c9a08ac9b5c8cbde6',1,'sparse::Matrix::Matrix(T &amp;&amp;default_value=T{}) noexcept(noexcept(T(std::forward&lt; T &gt;(default_value))))'],['../structsparse_1_1Matrix.html#aa6fd2bfe6c4d7fb252e8eb234a87671a',1,'sparse::Matrix::Matrix(Matrix const &amp;other)'],['../structsparse_1_1Matrix.html#a8882ff06e11016c1ee633221855b74ca',1,'sparse::Matrix::Matrix(Matrix &amp;&amp;other) noexcept'],['../structsparse_1_1Matrix.html',1,'sparse::Matrix&lt; T, N_DIMS &gt;']]],
-  ['matrix_2ehpp_3',['matrix.hpp',['../matrix_8hpp.html',1,'']]],
-  ['matrix_5fgtest_2ecpp_4',['matrix_gtest.cpp',['../matrix__gtest_8cpp.html',1,'']]]
+  ['operator_20t_0',['operator T',['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#ab9ae5406017bb8dd8b71a4b9efba3f70',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;']]],
+  ['operator_3c_3c_1',['operator&lt;&lt;',['../structsparse_1_1Matrix.html#a5186a74f5bbfd9be79760421a88becd3',1,'sparse::Matrix']]],
+  ['operator_3d_2',['operator=',['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a2086fbac7834a648cf8625eaf417f05d',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;::operator=(T &amp;&amp;value) noexcept(noexcept(_cell-&gt;set(_idx, std::forward&lt; T &gt;(value))))'],['../classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a4b510f2fc752691251a22f315bf213be',1,'sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;::operator=(T const &amp;value) noexcept(noexcept(_cell-&gt;set(_idx, value)))'],['../structsparse_1_1Matrix.html#ae42d2842d9a5d8387b59ccd19aecbf12',1,'sparse::Matrix::operator=(Matrix const &amp;other)'],['../structsparse_1_1Matrix.html#a7a3c480a3134cad4d0ac7f02a1e521ca',1,'sparse::Matrix::operator=(Matrix &amp;&amp;other) noexcept']]],
+  ['operator_5b_5d_3',['operator[]',['../classsparse_1_1details_1_1ShiftIndex.html#a897b31010bcb99514414f542cc3f855c',1,'sparse::details::ShiftIndex::operator[]()'],['../structsparse_1_1Matrix.html#a4f547a150f9f023c071f07f1e4af397f',1,'sparse::Matrix::operator[]()']]]
 ];
