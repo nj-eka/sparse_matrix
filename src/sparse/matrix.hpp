@@ -105,6 +105,11 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  *    m[100][200][300] = -1;
  *    assert(m.size() == 0);
  * @endcode
+ * @code {.cpp}
+ *    Matrix<int> matrix;
+ *    ((matrix[100][100] = 314) = 0) = 217;
+ *    assert(matrix[100][100], 217);
+ * @endcode
  * @note: `default_value` is moved from template parameters list to class member list
  *        to make it possible to assign matrix with diffrent `default_value`
  *        to expand possible applying.
