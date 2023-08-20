@@ -81,11 +81,11 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
 
  public:
   operator T() const noexcept { return _cell->get(_idx); }
-  ShiftIndex<T, N_DIMS, N_DIMS>& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
+  auto& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
     _cell->set(_idx, std::forward<T>(value));
     return *this;
   }
-  ShiftIndex<T, N_DIMS, N_DIMS>& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
+  auto& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
     _cell->set(_idx, value);
     return *this;
   }
@@ -97,7 +97,7 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  * @brief sparse matrix with `N_DIMS` "infinite" dimensions
  *
  * @note Usage examlple:
- *
+ * @code {.cpp}
  *    Matrix<int, 3> m(-1);
  *    m[100][200][300] = 1;
  *    assert(m[100][200][300] == 1);
@@ -105,6 +105,7 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  *    assert(m.size() == 1);
  *    m[100][200][300] = -1;
  *    assert(m.size() == 0);
+ * @endcode
  *
  * @tparam T copyable type of matrix element
  * @tparam N_DIMS number of matrix dimensions (>= 1)

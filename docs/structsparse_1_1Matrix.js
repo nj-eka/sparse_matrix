@@ -1,0 +1,26 @@
+var structsparse_1_1Matrix =
+[
+    [ "const_iterator", "structsparse_1_1Matrix.html#a873a147aed5d2ddc894996d567232f45", null ],
+    [ "HeadShiftIndex", "structsparse_1_1Matrix.html#a3def5a38ddbc5e7c5ddaaec6d5335f8a", null ],
+    [ "IndexType", "structsparse_1_1Matrix.html#acf84a54e290816ec88f0e61d17d94cfe", null ],
+    [ "IndexTypeConstShared", "structsparse_1_1Matrix.html#aa9c9cf12245417ba1c860c929721d012", null ],
+    [ "Matrix", "structsparse_1_1Matrix.html#a3e88346d3f6b6371079ff3ade4d62c75", null ],
+    [ "Matrix", "structsparse_1_1Matrix.html#af2fe5cd3536ce03c9a08ac9b5c8cbde6", null ],
+    [ "Matrix", "structsparse_1_1Matrix.html#aa6fd2bfe6c4d7fb252e8eb234a87671a", null ],
+    [ "Matrix", "structsparse_1_1Matrix.html#a8882ff06e11016c1ee633221855b74ca", null ],
+    [ "begin", "structsparse_1_1Matrix.html#a36a6c5bdb41107cfcad0e55a05d8a4ed", null ],
+    [ "cbegin", "structsparse_1_1Matrix.html#a171500a9c5d5c65fd0c2104faa75d000", null ],
+    [ "cend", "structsparse_1_1Matrix.html#acb404c7fb3b4d7e6264cc9c288d40e8a", null ],
+    [ "end", "structsparse_1_1Matrix.html#a4f026539b1f39db738189907766c6a35", null ],
+    [ "get", "structsparse_1_1Matrix.html#a08058aa813f040149b396853e171e0c6", null ],
+    [ "operator=", "structsparse_1_1Matrix.html#a7a3c480a3134cad4d0ac7f02a1e521ca", null ],
+    [ "operator=", "structsparse_1_1Matrix.html#ae42d2842d9a5d8387b59ccd19aecbf12", null ],
+    [ "operator[]", "structsparse_1_1Matrix.html#a4f547a150f9f023c071f07f1e4af397f", null ],
+    [ "set", "structsparse_1_1Matrix.html#a583348bd61b82fb9e2525d371717d3b6", null ],
+    [ "set", "structsparse_1_1Matrix.html#a40c3ee9917d6691161294f8904a51e20", null ],
+    [ "size", "structsparse_1_1Matrix.html#a9eb34961dfac491ed87d3022169f007a", null ],
+    [ "swap", "structsparse_1_1Matrix.html#ab356d1d4402e953b93a39983979049ed", null ],
+    [ "operator<<", "structsparse_1_1Matrix.html#a5186a74f5bbfd9be79760421a88becd3", null ],
+    [ "_default", "structsparse_1_1Matrix.html#abbd4e335f84040eee4fe7277fcdd5890", null ],
+    [ "_map", "structsparse_1_1Matrix.html#acdc31ef9143f96f61232f90b2b7819a8", null ]
+];
