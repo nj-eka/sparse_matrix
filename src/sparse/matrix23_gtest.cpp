@@ -3,43 +3,45 @@
 #include <sstream>
 #include <algorithm>
 
-#include "matrix.hpp"
+#include "matrix23.hpp"
 
-using namespace sparse;
+using namespace sparse::std23;
 
-TEST(sparse_matrix, create_empty) {
+TEST(sparse_matrix23, create_empty) {
   Matrix<int> matrix;
   ASSERT_EQ(matrix.size(), 0);
 }
 
-TEST(sparse_matrix, check_default_value) {
+TEST(sparse_matrix23, check_default_value) {
   constexpr int default_value = -1;
   Matrix<int> matrix(default_value);
-  ASSERT_EQ(matrix[0][0], default_value);
-  ASSERT_EQ(matrix[1000][20000], default_value);
+  // it seems gtest macro is not designed to support operator[](...) yet
+  // ошибка: в макрос «ASSERT_EQ» передано 3 аргументов, но используется только 2 ASSERT_EQ(matrix[0, 0], default_value);
+  ASSERT_EQ((matrix[0, 0]), default_value);
+  ASSERT_EQ((matrix[1000, 20000]), default_value);
   ASSERT_EQ(matrix.size(), 0);
 }
 
-TEST(sparse_matrix, assign) {
+TEST(sparse_matrix23, assign) {
   Matrix<int> m;
-  m[100][100] = 314;
-  ASSERT_EQ(m[100][100], 314);
+  m[100, 100] = 314;
+  ASSERT_EQ((m[100, 100]), 314);
   ASSERT_EQ(m.size(), 1);
 }
 
-TEST(sparse_matrix, default_value_assignmen) {
+TEST(sparse_matrix23, default_value_assignmen) {
   constexpr int default_value = -1;
   Matrix<int> matrix(default_value);
   ASSERT_EQ(matrix.size(), 0);
-  matrix[100][100] = 314;
+  matrix[100, 100] = 314;
   ASSERT_EQ(matrix.size(), 1);
-  matrix[100][100] = default_value;
+  matrix[100, 100] = default_value;
   ASSERT_EQ(matrix.size(), 0);
 }
 
-TEST(sparse_matrix, iteration1) {
+TEST(sparse_matrix23, iteration1) {
   Matrix<int> matrix;
-  matrix[100][200] = 314;
+  matrix[100, 200] = 314;
   std::stringstream ss;
   for(auto const& cell: matrix)     
   {         
@@ -50,29 +52,24 @@ TEST(sparse_matrix, iteration1) {
   ASSERT_EQ(ss.str(), "100:200=314");
 }
 
-TEST(sparse_matrix, iteration2) {
+TEST(sparse_matrix23, iteration2) {
   Matrix<int> matrix;
-  matrix[10][100] = 11;
-  matrix[20][200] = 22;
-  matrix[30][300] = 33;
+  matrix[10, 100] = 11;
+  matrix[20, 200] = 22;
+  matrix[30, 300] = 33;
   std::stringstream ss;
-  // for (auto const& e: matrix) {
-  //   auto const& [x, y, v] = e;
-  //   ss << x << y << v << "\n";
-  // }
-  // ASSERT_EQ(ss.str(), "1010011\n2020022\n3030033\n");
   ss << matrix;
   ASSERT_EQ(ss.str(), "[10,100]=11\n[20,200]=22\n[30,300]=33\n");
   ASSERT_EQ(matrix.size(), 3);
 }
 
-TEST(sparse_matrix, reassignment) {
+TEST(sparse_matrix23, reassignment) {
   Matrix<int> matrix;
-  ((matrix[100][100] = 314) = 0) = 217;
-  ASSERT_EQ(matrix[100][100], 217);
+  ((matrix[100, 100] = 314) = 0) = 217;
+  ASSERT_EQ((matrix[100, 100]), 217);
 }
 
-TEST(sparse_matrix, dim1) {
+TEST(sparse_matrix23, dim1) {
   constexpr int default_value = -1;
   Matrix<int, 1> matrix(default_value);
   ASSERT_EQ(matrix[1000], default_value);
@@ -86,16 +83,16 @@ TEST(sparse_matrix, dim1) {
   ASSERT_EQ(matrix.size(), 0);
 }
 
-TEST(sparse_matrix, dim3) {
+TEST(sparse_matrix23, dim3) {
   constexpr int default_value = -1;
   Matrix<int, 3> matrix(default_value);
-  ASSERT_EQ(matrix[1000][2000][3000], default_value);
+  ASSERT_EQ((matrix[1000, 2000, 3000]), default_value);
   ASSERT_EQ(matrix.size(), 0);
-  matrix[1000][2000][3000] = 314;
-  ASSERT_EQ(matrix[1000][2000][3000], 314);
-  ASSERT_EQ(matrix[1000][2000][30000], default_value);
+  matrix[1000, 2000, 3000] = 314;
+  ASSERT_EQ((matrix[1000, 2000, 3000]), 314);
+  ASSERT_EQ((matrix[1000, 2000, 30000]), default_value);
   ASSERT_EQ(matrix.size(), 1);
-  matrix[1000][2000][3000] = default_value;
-  ASSERT_EQ(matrix[1000][2000][3000], default_value);
+  matrix[1000, 2000, 3000] = default_value;
+  ASSERT_EQ((matrix[1000, 2000, 3000]), default_value);
   ASSERT_EQ(matrix.size(), 0);
 }

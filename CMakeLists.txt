@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 
@@ -48,6 +48,7 @@ if(BUILD_TESTING)
     add_executable(
         hw6_gtest
         "src/sparse/matrix_gtest.cpp"
+        "src/sparse/matrix23_gtest.cpp"        
     )
     set_target_properties(
         hw6_gtest

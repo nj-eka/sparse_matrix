@@ -7,10 +7,12 @@
 #include <ostream>
 #include <type_traits>
 #include <utility>
+#include <cstdarg>
+#include <stdexcept>
 
 #include "utils/logging.hpp"
 
-namespace sparse {
+namespace sparse::std23 {
 
 template <std::copyable T, size_t N_DIMS = 2>
 struct Matrix;
@@ -41,31 +43,8 @@ struct CellAccessor {
   // && noexcept(::operator=(std::forward<T>(value)))
 };
 
-template <std::copyable T, size_t N_DIMS, size_t DIM>
-class ShiftIndex {
-  static_assert(N_DIMS > 0, "N_DIMS must be > 0");
-  static_assert(DIM < N_DIMS, "DIM out of declared range (N_DIMS)");
-
-  CellAccessor<T, N_DIMS>* _cell;  // no shared_ptr cuz Matrix object is created at stack as usual
-  IndexTypeShared<N_DIMS> const _idx;
-
-  ShiftIndex(CellAccessor<T, N_DIMS>* cell, IndexTypeShared<N_DIMS> idx) noexcept : _cell{cell}, _idx{idx} {}
-
-  ShiftIndex(ShiftIndex const&) = delete;
-  ShiftIndex& operator=(ShiftIndex const&) = delete;
-
-  friend struct ShiftIndex<T, N_DIMS, DIM - 1>;
-  friend struct sparse::Matrix<T, N_DIMS>;
-
- public:
-  ShiftIndex<T, N_DIMS, DIM + 1> operator[](size_t last_idx) noexcept {
-    (*_idx)[DIM] = last_idx;  // m[]...[] - only in this way it is supposed to be used
-    return ShiftIndex<T, N_DIMS, DIM + 1>(_cell, _idx);
-  }
-};
-
 template <std::copyable T, size_t N_DIMS>
-class ShiftIndex<T, N_DIMS, N_DIMS> {
+class ShiftIndex {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
 
   CellAccessor<T, N_DIMS>* _cell;  // no shared_ptr cuz Matrix object is created at stack as usual
@@ -76,7 +55,6 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
   ShiftIndex(ShiftIndex const&) = delete;
   ShiftIndex& operator=(ShiftIndex const&) = delete;
 
-  friend struct ShiftIndex<T, N_DIMS, N_DIMS - 1>;
   friend struct Matrix<T, N_DIMS>;
 
  public:
@@ -117,8 +95,6 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
 
   using IndexTypeConstShared = details::IndexTypeConstShared<N_DIMS>;
-  using HeadShiftIndex = details::ShiftIndex<T, N_DIMS, 1>;
-
   using const_iterator = typename std::map<IndexType<N_DIMS>, T>::const_iterator;
 
   /** @name ctor */
@@ -145,11 +121,30 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   }
   ///@}
 
-  /** @name head_index */
+  /** @name index */
   ///@{
-  HeadShiftIndex operator[](size_t idx1) {
+  T const& operator[](size_t first...) const {
     LOG_PPF;
-    return HeadShiftIndex(this, details::IndexTypeShared<N_DIMS>(new IndexType<N_DIMS>{idx1}));
+    va_list args;
+    va_start(args, first);
+    IndexType<N_DIMS> index{first};
+    for (size_t i = 1; i < N_DIMS; ++i) {
+      index[i] = va_arg(args, size_t);
+    }
+    va_end(args);
+    return get(index);
+  }
+
+  details::ShiftIndex<T, N_DIMS> operator[](size_t first...) {
+    LOG_PPF;
+    va_list args;
+    va_start(args, first);
+    auto sp_index = std::shared_ptr<IndexType<N_DIMS>>(new IndexType<N_DIMS>{first});
+    for (size_t i = 1; i < N_DIMS; ++i) {
+      (*sp_index)[i] = va_arg(args, size_t);
+    }
+    va_end(args);
+    return details::ShiftIndex<T, N_DIMS>(this, sp_index);
   }
   ///@}
 
