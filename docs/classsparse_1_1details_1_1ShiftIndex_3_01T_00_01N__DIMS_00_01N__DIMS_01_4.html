@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-15-g41a791c-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-20-ge2d1e2a-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -98,8 +98,6 @@ $(document).ready(function(){initNavTree('classsparse_1_1details_1_1ShiftIndex_3
   <div class="headertitle"><div class="title">sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;:</div>
 <div class="dyncontent">
@@ -110,17 +108,17 @@ Collaboration diagram for sparse::details::ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9ae5406017bb8dd8b71a4b9efba3f70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#ab9ae5406017bb8dd8b71a4b9efba3f70">operator T</a> () const noexcept</td></tr>
 <tr class="separator:ab9ae5406017bb8dd8b71a4b9efba3f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2086fbac7834a648cf8625eaf417f05d"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a2086fbac7834a648cf8625eaf417f05d">operator=</a> (T &amp;&amp;value) noexcept(noexcept(_cell-&gt;set(_idx, std::forward&lt; T &gt;(value))))</td></tr>
-<tr class="separator:a2086fbac7834a648cf8625eaf417f05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b510f2fc752691251a22f315bf213be"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a4b510f2fc752691251a22f315bf213be">operator=</a> (T const &amp;value) noexcept(noexcept(_cell-&gt;set(_idx, value)))</td></tr>
-<tr class="separator:a4b510f2fc752691251a22f315bf213be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e27fa2108d1ff258fa649b634ee181f"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a4e27fa2108d1ff258fa649b634ee181f">operator=</a> (T &amp;&amp;value) noexcept(noexcept(_cell-&gt;set(*_idx.get(), std::forward&lt; T &gt;(value))))</td></tr>
+<tr class="separator:a4e27fa2108d1ff258fa649b634ee181f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea62eaf89001242aac3cb3d470f46ee"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#abea62eaf89001242aac3cb3d470f46ee">operator=</a> (T const &amp;value) noexcept(noexcept(_cell-&gt;set(*_idx.get(), value)))</td></tr>
+<tr class="separator:abea62eaf89001242aac3cb3d470f46ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a92d6780b388e536df755a768619ad319"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a92d6780b388e536df755a768619ad319">ShiftIndex&lt; T, N_DIMS, N_DIMS - 1 &gt;</a></td></tr>
 <tr class="separator:a92d6780b388e536df755a768619ad319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09038469423da628535fa12bcfac7c9a"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a09038469423da628535fa12bcfac7c9a">sparse::Matrix&lt; T, N_DIMS &gt;</a></td></tr>
-<tr class="separator:a09038469423da628535fa12bcfac7c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3661ea12aa0254bdcf7027267399ce"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html#a6f3661ea12aa0254bdcf7027267399ce">Matrix&lt; T, N_DIMS &gt;</a></td></tr>
+<tr class="separator:a6f3661ea12aa0254bdcf7027267399ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;std::copyable T, size_t N_DIMS&gt;<br />
@@ -153,19 +151,12 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00083">83</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> _cell-&gt;get(_idx); }</div>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> _cell-&gt;get(*_idx.get()); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="matrix_8hpp_source.html#l00158">sparse::Matrix&lt; T, N_DIMS &gt;::get()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4_ab9ae5406017bb8dd8b71a4b9efba3f70_cgraph.svg" width="428" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a2086fbac7834a648cf8625eaf417f05d" name="a2086fbac7834a648cf8625eaf417f05d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2086fbac7834a648cf8625eaf417f05d">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a4e27fa2108d1ff258fa649b634ee181f" name="a4e27fa2108d1ff258fa649b634ee181f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e27fa2108d1ff258fa649b634ee181f">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,15 +182,15 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00084">84</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                                        {</div>
-<div class="line"><span class="lineno">   85</span>    _cell-&gt;set(_idx, std::forward&lt;T&gt;(value));</div>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                                               {</div>
+<div class="line"><span class="lineno">   85</span>    _cell-&gt;set(*_idx.get(), std::forward&lt;T&gt;(value));</div>
 <div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">   87</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a4b510f2fc752691251a22f315bf213be" name="a4b510f2fc752691251a22f315bf213be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b510f2fc752691251a22f315bf213be">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="abea62eaf89001242aac3cb3d470f46ee" name="abea62eaf89001242aac3cb3d470f46ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea62eaf89001242aac3cb3d470f46ee">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,14 +216,40 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00088">88</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                                              {</div>
-<div class="line"><span class="lineno">   89</span>    _cell-&gt;set(_idx, value);</div>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   89</span>    _cell-&gt;set(*_idx.get(), value);</div>
 <div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">   91</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a6f3661ea12aa0254bdcf7027267399ce" name="a6f3661ea12aa0254bdcf7027267399ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3661ea12aa0254bdcf7027267399ce">&#9670;&#160;</a></span>Matrix&lt; T, N_DIMS &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::copyable T, size_t N_DIMS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct <a class="el" href="structsparse_1_1Matrix.html">Matrix</a>&lt; T, N_DIMS &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00077">77</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a92d6780b388e536df755a768619ad319" name="a92d6780b388e536df755a768619ad319"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92d6780b388e536df755a768619ad319">&#9670;&#160;</a></span>ShiftIndex&lt; T, N_DIMS, N_DIMS - 1 &gt;</h2>
 
@@ -259,32 +276,6 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 
 </div>
 </div>
-<a id="a09038469423da628535fa12bcfac7c9a" name="a09038469423da628535fa12bcfac7c9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09038469423da628535fa12bcfac7c9a">&#9670;&#160;</a></span>sparse::Matrix&lt; T, N_DIMS &gt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::copyable T, size_t N_DIMS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend struct <a class="el" href="structsparse_1_1Matrix.html">sparse::Matrix</a>&lt; T, N_DIMS &gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00077">77</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/sparse/<a class="el" href="matrix_8hpp_source.html">matrix.hpp</a></li>
 </ul>
@@ -293,7 +284,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesparse.html">sparse</a></li><li class="navelem"><a class="el" href="namespacesparse_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html">ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;</a></li>
+    <li class="navelem"><b>sparse</b></li><li class="navelem"><a class="el" href="namespacesparse_1_1details.html">details</a></li><li class="navelem"><a class="el" href="classsparse_1_1details_1_1ShiftIndex_3_01T_00_01N__DIMS_00_01N__DIMS_01_4.html">ShiftIndex&lt; T, N_DIMS, N_DIMS &gt;</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

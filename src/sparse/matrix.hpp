@@ -34,10 +34,10 @@ using IndexTypeConstShared = std::shared_ptr<IndexType<N_DIMS> const>;
 
 template <std::copyable T, size_t N_DIMS>
 struct CellAccessor {
-  virtual T const& get(IndexTypeConstShared<N_DIMS>) const noexcept = 0;
-  virtual void set(IndexTypeConstShared<N_DIMS> idx, T const& value) noexcept(noexcept(T(value))) = 0;
+  virtual T const& get(IndexType<N_DIMS> const&) const noexcept = 0;
+  virtual void set(IndexType<N_DIMS> const& idx, T const& value) noexcept(noexcept(T(value))) = 0;
   // && noexcept(operator=(std::decay<T>(value)))
-  virtual void set(IndexTypeConstShared<N_DIMS> idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) = 0;
+  virtual void set(IndexType<N_DIMS> const& idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) = 0;
   // && noexcept(::operator=(std::forward<T>(value)))
 };
 
@@ -80,13 +80,13 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
   friend struct Matrix<T, N_DIMS>;
 
  public:
-  operator T() const noexcept { return _cell->get(_idx); }
-  auto& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
-    _cell->set(_idx, std::forward<T>(value));
+  operator T() const noexcept { return _cell->get(*_idx.get()); }
+  auto& operator=(T&& value) noexcept(noexcept(_cell->set(*_idx.get(), std::forward<T>(value)))) {
+    _cell->set(*_idx.get(), std::forward<T>(value));
     return *this;
   }
-  auto& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
-    _cell->set(_idx, value);
+  auto& operator=(T const& value) noexcept(noexcept(_cell->set(*_idx.get(), value))) {
+    _cell->set(*_idx.get(), value);
     return *this;
   }
 };
@@ -118,7 +118,7 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  * @tparam N_DIMS number of matrix dimensions (>= 1)
  */
 template <std::copyable T, size_t N_DIMS>
-struct Matrix final : private details::CellAccessor<T, N_DIMS> {
+struct Matrix final : details::CellAccessor<T, N_DIMS> {
   static_assert(N_DIMS > 0, "N_DIMS must be > 0");
 
   using IndexTypeConstShared = details::IndexTypeConstShared<N_DIMS>;
@@ -158,7 +158,7 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   }
   ///@}
 
-  /** @name element_getter_setter */
+  /** @name details::CellAccessor */
   ///@{
   T const& get(IndexType<N_DIMS> const& idx) const noexcept {
     auto const& it = _map.find(idx);
@@ -220,14 +220,6 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
     std::swap(_default, other._default);
   }
 
-  /** @name details::CellAccessor */
-  ///@{
-  T const& get(IndexTypeConstShared idx) const noexcept override { return get(*idx.get()); }
-  void set(IndexTypeConstShared idx, T const& value) noexcept(noexcept(T(value))) override { set(*idx.get(), value); }
-  void set(IndexTypeConstShared idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) override {
-    set(*idx.get(), std::forward<T>(value));
-  }
-  ///@}
 };
 
 }  // namespace sparse

@@ -2,13 +2,13 @@
 
 #include <array>
 #include <concepts>
+#include <cstdarg>
 #include <map>
 #include <memory>
 #include <ostream>
+#include <stdexcept>
 #include <type_traits>
 #include <utility>
-#include <cstdarg>
-#include <stdexcept>
 
 #include "utils/logging.hpp"
 
@@ -36,10 +36,10 @@ using IndexTypeConstShared = std::shared_ptr<IndexType<N_DIMS> const>;
 
 template <std::copyable T, size_t N_DIMS>
 struct CellAccessor {
-  virtual T const& get(IndexTypeConstShared<N_DIMS>) const noexcept = 0;
-  virtual void set(IndexTypeConstShared<N_DIMS> idx, T const& value) noexcept(noexcept(T(value))) = 0;
+  virtual T const& get(IndexType<N_DIMS> const&) const noexcept = 0;
+  virtual void set(IndexType<N_DIMS> const& idx, T const& value) noexcept(noexcept(T(value))) = 0;
   // && noexcept(operator=(std::decay<T>(value)))
-  virtual void set(IndexTypeConstShared<N_DIMS> idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) = 0;
+  virtual void set(IndexType<N_DIMS> const& idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) = 0;
   // && noexcept(::operator=(std::forward<T>(value)))
 };
 
@@ -58,13 +58,13 @@ class ProxyCell {
   friend struct Matrix<T, N_DIMS>;
 
  public:
-  operator T() const noexcept { return _cell->get(_idx); }
-  auto& operator=(T&& value) noexcept(noexcept(_cell->set(_idx, std::forward<T>(value)))) {
-    _cell->set(_idx, std::forward<T>(value));
+  operator T() const noexcept { return _cell->get(*_idx.get()); }
+  auto& operator=(T&& value) noexcept(noexcept(_cell->set(*_idx.get(), std::forward<T>(value)))) {
+    _cell->set(*_idx.get(), std::forward<T>(value));
     return *this;
   }
-  auto& operator=(T const& value) noexcept(noexcept(_cell->set(_idx, value))) {
-    _cell->set(_idx, value);
+  auto& operator=(T const& value) noexcept(noexcept(_cell->set(*_idx.get(), value))) {
+    _cell->set(*_idx.get(), value);
     return *this;
   }
 };
@@ -153,7 +153,7 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   }
   ///@}
 
-  /** @name element_getter_setter */
+  /** @name details::CellAccessor */
   ///@{
   T const& get(IndexType<N_DIMS> const& idx) const noexcept {
     auto const& it = _map.find(idx);
@@ -172,10 +172,7 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
     if (value == _default)
       _map.erase(idx);
     else
-      _map.insert_or_assign(idx, std::forward<T>(value)); /**< alternatives for insert (not assign):
-        _map.emplace(std::piecewise_construct, std::forward_as_tuple(idx), std::forward_as_tuple(value));
-        _map.try_emplace(idx, std::forward<T>(value));
-      */
+      _map.insert_or_assign(idx, std::forward<T>(value));
   }
   ///@}
 
@@ -214,15 +211,6 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
     std::swap(_map, other._map);
     std::swap(_default, other._default);
   }
-
-  /** @name details::CellAccessor */
-  ///@{
-  T const& get(IndexTypeConstShared idx) const noexcept override { return get(*idx.get()); }
-  void set(IndexTypeConstShared idx, T const& value) noexcept(noexcept(T(value))) override { set(*idx.get(), value); }
-  void set(IndexTypeConstShared idx, T&& value) noexcept(noexcept(T(std::forward<T>(value)))) override {
-    set(*idx.get(), std::forward<T>(value));
-  }
-  ///@}
 };
 
-}  // namespace sparse
+}  // namespace sparse::std23
