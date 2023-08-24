@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-20-ge2d1e2a-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-22-gf5a0e29-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -137,10 +137,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a51036f8f82d0df03753976c2b8d1b177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsparse_1_1std23_1_1Matrix.html">Matrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a51036f8f82d0df03753976c2b8d1b177">operator=</a> (<a class="el" href="structsparse_1_1std23_1_1Matrix.html">Matrix</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="separator:a51036f8f82d0df03753976c2b8d1b177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">index</div></td></tr>
-<tr class="memitem:a6805276d29c02339e408b5e35f48e711"><td class="memItemLeft" align="right" valign="top">T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a6805276d29c02339e408b5e35f48e711">operator[]</a> (size_t first...) const</td></tr>
-<tr class="separator:a6805276d29c02339e408b5e35f48e711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78b4e2f4ba9d1ad754606735a74f0582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsparse_1_1std23_1_1details_1_1ProxyCell.html">details::ProxyCell</a>&lt; T, N_DIMS &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a78b4e2f4ba9d1ad754606735a74f0582">operator[]</a> (size_t first...)</td></tr>
-<tr class="separator:a78b4e2f4ba9d1ad754606735a74f0582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0674e24f3eb7f892f8bf88c7bd4e574f"><td class="memTemplParams" colspan="2">template&lt;typename... Idxs&gt; </td></tr>
+<tr class="memitem:a0674e24f3eb7f892f8bf88c7bd4e574f"><td class="memTemplItemLeft" align="right" valign="top">T const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a0674e24f3eb7f892f8bf88c7bd4e574f">operator[]</a> (Idxs... idxs) const</td></tr>
+<tr class="separator:a0674e24f3eb7f892f8bf88c7bd4e574f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14bc54a33e4b9e0b7f0e8ff77a66b5d8"><td class="memTemplParams" colspan="2">template&lt;typename... Idxs&gt; </td></tr>
+<tr class="memitem:a14bc54a33e4b9e0b7f0e8ff77a66b5d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classsparse_1_1std23_1_1details_1_1ProxyCell.html">details::ProxyCell</a>&lt; T, N_DIMS &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a14bc54a33e4b9e0b7f0e8ff77a66b5d8">operator[]</a> (Idxs... idxs)</td></tr>
+<tr class="separator:a14bc54a33e4b9e0b7f0e8ff77a66b5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">details::CellAccessor</div></td></tr>
 <tr class="memitem:a21d89c77db503b7af977f518dd2fcdae"><td class="memItemLeft" align="right" valign="top">T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a21d89c77db503b7af977f518dd2fcdae">get</a> (IndexType&lt; N_DIMS &gt; const &amp;idx) const noexcept</td></tr>
 <tr class="separator:a21d89c77db503b7af977f518dd2fcdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -380,8 +382,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00186">186</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  186</span>{ <span class="keywordflow">return</span> _map.cbegin(); }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00176">176</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>{ <span class="keywordflow">return</span> _map.cbegin(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,8 +412,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00188">188</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  188</span>{ <span class="keywordflow">return</span> _map.cbegin(); }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00178">178</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{ <span class="keywordflow">return</span> _map.cbegin(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,8 +442,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00189">189</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>{ <span class="keywordflow">return</span> _map.cend(); }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00179">179</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{ <span class="keywordflow">return</span> _map.cend(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,8 +472,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00187">187</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>{ <span class="keywordflow">return</span> _map.cend(); }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00177">177</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>{ <span class="keywordflow">return</span> _map.cend(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -503,14 +505,14 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 
 <p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00158">158</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>                                                            {</div>
-<div class="line"><span class="lineno">  159</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; it = _map.find(idx);</div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (it == _map.end()) {</div>
-<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">return</span> _default;</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> it-&gt;second;</div>
-<div class="line"><span class="lineno">  164</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00148">148</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                                                            {</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; it = _map.find(idx);</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (it == _map.end()) {</div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordflow">return</span> _default;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><span class="lineno">  154</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -585,13 +587,15 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a78b4e2f4ba9d1ad754606735a74f0582" name="a78b4e2f4ba9d1ad754606735a74f0582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78b4e2f4ba9d1ad754606735a74f0582">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a14bc54a33e4b9e0b7f0e8ff77a66b5d8" name="a14bc54a33e4b9e0b7f0e8ff77a66b5d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14bc54a33e4b9e0b7f0e8ff77a66b5d8">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;std::copyable T, size_t N_DIMS&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Idxs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -599,8 +603,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classsparse_1_1std23_1_1details_1_1ProxyCell.html">details::ProxyCell</a>&lt; T, N_DIMS &gt; <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>first...</em></td><td>)</td>
+          <td class="paramtype">Idxs...&#160;</td>
+          <td class="paramname"><em>idxs</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -611,28 +615,24 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00143">143</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>                                                          {</div>
-<div class="line"><span class="lineno">  144</span>    LOG_PPF;</div>
-<div class="line"><span class="lineno">  145</span>    va_list args;</div>
-<div class="line"><span class="lineno">  146</span>    va_start(args, first);</div>
-<div class="line"><span class="lineno">  147</span>    <span class="keyword">auto</span> sp_index = std::shared_ptr&lt;IndexType&lt;N_DIMS&gt;&gt;(<span class="keyword">new</span> IndexType&lt;N_DIMS&gt;{first});</div>
-<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; N_DIMS; ++i) {</div>
-<div class="line"><span class="lineno">  149</span>      (*sp_index)[i] = va_arg(args, <span class="keywordtype">size_t</span>);</div>
-<div class="line"><span class="lineno">  150</span>    }</div>
-<div class="line"><span class="lineno">  151</span>    va_end(args);</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> details::ProxyCell&lt;T, N_DIMS&gt;(<span class="keyword">this</span>, sp_index);</div>
-<div class="line"><span class="lineno">  153</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00139">139</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                       {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>...(idxs) == N_DIMS, <span class="stringliteral">&quot;invalid number of index params&quot;</span>);</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keyword">auto</span> sp_index = std::shared_ptr&lt;IndexType&lt;N_DIMS&gt;&gt;(<span class="keyword">new</span> IndexType&lt;N_DIMS&gt;{<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(idxs)...});</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> details::ProxyCell&lt;T, N_DIMS&gt;(<span class="keyword">this</span>, sp_index);</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6805276d29c02339e408b5e35f48e711" name="a6805276d29c02339e408b5e35f48e711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6805276d29c02339e408b5e35f48e711">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a0674e24f3eb7f892f8bf88c7bd4e574f" name="a0674e24f3eb7f892f8bf88c7bd4e574f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0674e24f3eb7f892f8bf88c7bd4e574f">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;std::copyable T, size_t N_DIMS&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Idxs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -640,8 +640,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname">T const  &amp; <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>first...</em></td><td>)</td>
+          <td class="paramtype">Idxs...&#160;</td>
+          <td class="paramname"><em>idxs</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -652,18 +652,12 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00131">131</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                                             {</div>
-<div class="line"><span class="lineno">  132</span>    LOG_PPF;</div>
-<div class="line"><span class="lineno">  133</span>    va_list args;</div>
-<div class="line"><span class="lineno">  134</span>    va_start(args, first);</div>
-<div class="line"><span class="lineno">  135</span>    IndexType&lt;N_DIMS&gt; index{first};</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; N_DIMS; ++i) {</div>
-<div class="line"><span class="lineno">  137</span>      index[i] = va_arg(args, <span class="keywordtype">size_t</span>);</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
-<div class="line"><span class="lineno">  139</span>    va_end(args);</div>
-<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> get(index);</div>
-<div class="line"><span class="lineno">  141</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00132">132</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>                                          {</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>...(idxs) == N_DIMS, <span class="stringliteral">&quot;invalid number of index params&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>    IndexType&lt;N_DIMS&gt; index{idxs...};</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> get(index);</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -705,13 +699,13 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 
 <p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00171">171</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>                                                                                                {</div>
-<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (value == _default)</div>
-<div class="line"><span class="lineno">  173</span>      _map.erase(idx);</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  175</span>      _map.insert_or_assign(idx, std::forward&lt;T&gt;(value));</div>
-<div class="line"><span class="lineno">  176</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00161">161</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                                                {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (value == _default)</div>
+<div class="line"><span class="lineno">  163</span>      _map.erase(idx);</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  165</span>      _map.insert_or_assign(idx, std::forward&lt;T&gt;(value));</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -753,13 +747,13 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 
 <p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00165">165</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                                                      {</div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (value == _default)</div>
-<div class="line"><span class="lineno">  167</span>      _map.erase(idx);</div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  169</span>      _map.insert_or_assign(idx, value);</div>
-<div class="line"><span class="lineno">  170</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00155">155</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>                                                                                      {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (value == _default)</div>
+<div class="line"><span class="lineno">  157</span>      _map.erase(idx);</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  159</span>      _map.insert_or_assign(idx, value);</div>
+<div class="line"><span class="lineno">  160</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -788,8 +782,8 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00181">181</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>{ <span class="keywordflow">return</span> _map.size(); }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00171">171</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>{ <span class="keywordflow">return</span> _map.size(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -830,16 +824,16 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00194">194</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>                                                                       {</div>
-<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cell : matrix) {</div>
-<div class="line"><span class="lineno">  196</span>      <span class="keyword">auto</span> <span class="keyword">const</span>&amp; [idx, value] = cell;</div>
-<div class="line"><span class="lineno">  197</span>      out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; idx[0];</div>
-<div class="line"><span class="lineno">  198</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; N_DIMS; ++i) out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; idx[i];</div>
-<div class="line"><span class="lineno">  199</span>      out &lt;&lt; <span class="stringliteral">&quot;]=&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  200</span>    }</div>
-<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">return</span> out;</div>
-<div class="line"><span class="lineno">  202</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00184">184</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>                                                                       {</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cell : matrix) {</div>
+<div class="line"><span class="lineno">  186</span>      <span class="keyword">auto</span> <span class="keyword">const</span>&amp; [idx, value] = cell;</div>
+<div class="line"><span class="lineno">  187</span>      out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; idx[0];</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; N_DIMS; ++i) out &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; idx[i];</div>
+<div class="line"><span class="lineno">  189</span>      out &lt;&lt; <span class="stringliteral">&quot;]=&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  190</span>    }</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><span class="lineno">  192</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
