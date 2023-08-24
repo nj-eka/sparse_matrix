@@ -128,27 +128,17 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
 
   /** @name index */
   ///@{
-  T const& operator[](size_t first...) const {
-    LOG_PPF;
-    va_list args;
-    va_start(args, first);
-    IndexType<N_DIMS> index{first};
-    for (size_t i = 1; i < N_DIMS; ++i) {
-      index[i] = va_arg(args, size_t);
-    }
-    va_end(args);
+  template <typename... Idxs>
+  T const& operator[](Idxs... idxs) const {
+    static_assert(sizeof...(idxs) == N_DIMS, "invalid number of index params");
+    IndexType<N_DIMS> index{idxs...};
     return get(index);
   }
 
-  details::ProxyCell<T, N_DIMS> operator[](size_t first...) {
-    LOG_PPF;
-    va_list args;
-    va_start(args, first);
-    auto sp_index = std::shared_ptr<IndexType<N_DIMS>>(new IndexType<N_DIMS>{first});
-    for (size_t i = 1; i < N_DIMS; ++i) {
-      (*sp_index)[i] = va_arg(args, size_t);
-    }
-    va_end(args);
+  template <typename... Idxs>
+  details::ProxyCell<T, N_DIMS> operator[](Idxs... idxs) {
+    static_assert(sizeof...(idxs) == N_DIMS, "invalid number of index params");
+    auto sp_index = std::shared_ptr<IndexType<N_DIMS>>(new IndexType<N_DIMS>{static_cast<size_t>(idxs)...});
     return details::ProxyCell<T, N_DIMS>(this, sp_index);
   }
   ///@}

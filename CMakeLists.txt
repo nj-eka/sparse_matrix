@@ -53,7 +53,7 @@ if(BUILD_TESTING)
     set_target_properties(
         hw6_gtest
         PROPERTIES
-            CXX_STANDARD ${CMAKE_CXX_STANDARD}
+            CXX_STANDARD 23
             CXX_STANDARD_REQUIRED ${CMAKE_CXX_STANDARD_REQUIRED}
     )
     target_include_directories(
