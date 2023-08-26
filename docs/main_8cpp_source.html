@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-22-gf5a0e29-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-23-gcbfb6d5-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -94,36 +94,39 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
   <div class="headertitle"><div class="title">main.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;sparse/matrix.hpp&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="matrix_8hpp.html">sparse/matrix.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">int</span> main() {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  <a class="code hl_struct" href="structsparse_1_1Matrix.html">sparse::Matrix&lt;int&gt;</a> matrix;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <span class="keyword">constexpr</span> <span class="keywordtype">int</span> n = 10;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    matrix[i][i] = i;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    matrix[n-1-i][i] = i;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 8; ++i) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt;= 8; ++j) {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="keywordflow">if</span> (j &gt; 1) std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      std::cout &lt;&lt; matrix[i][j];</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;size = &quot;</span> &lt;&lt; matrix.size() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::cout &lt;&lt; matrix;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-<div class="ttc" id="astructsparse_1_1Matrix_html"><div class="ttname"><a href="structsparse_1_1Matrix.html">sparse::Matrix</a></div><div class="ttdoc">sparse matrix with N_DIMS &quot;infinite&quot; dimensions</div><div class="ttdef"><b>Definition</b> <a href="matrix_8hpp_source.html#l00121">matrix.hpp:121</a></div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   11</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_struct" href="structsparse_1_1Matrix.html">sparse::Matrix&lt;int&gt;</a> matrix;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">constexpr</span> <span class="keywordtype">int</span> n = 10;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    matrix[i][i] = i;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    matrix[n - 1 - i][i] = i;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 8; ++i) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt;= 8; ++j) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keywordflow">if</span> (j &gt; 1) std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      std::cout &lt;&lt; matrix[i][j];</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  std::cout &lt;&lt; <span class="stringliteral">&quot;size = &quot;</span> &lt;&lt; matrix.<a class="code hl_function" href="structsparse_1_1Matrix.html#a9eb34961dfac491ed87d3022169f007a">size</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::cout &lt;&lt; matrix;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdoc">hw-06</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00011">main.cpp:11</a></div></div>
+<div class="ttc" id="amatrix_8hpp_html"><div class="ttname"><a href="matrix_8hpp.html">matrix.hpp</a></div></div>
+<div class="ttc" id="astructsparse_1_1Matrix_html"><div class="ttname"><a href="structsparse_1_1Matrix.html">sparse::Matrix</a></div><div class="ttdoc">sparse matrix with N_DIMS &quot;infinite&quot; dimensions</div><div class="ttdef"><b>Definition</b> <a href="matrix_8hpp_source.html#l00123">matrix.hpp:123</a></div></div>
+<div class="ttc" id="astructsparse_1_1Matrix_html_a9eb34961dfac491ed87d3022169f007a"><div class="ttname"><a href="structsparse_1_1Matrix.html#a9eb34961dfac491ed87d3022169f007a">sparse::Matrix::size</a></div><div class="ttdeci">size_t size() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="matrix_8hpp_source.html#l00191">matrix.hpp:191</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

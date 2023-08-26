@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-22-gf5a0e29-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-23-gcbfb6d5-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('structsparse_1_1std23_1_1Matrix.html',
 <p>sparse matrix with <code>N_DIMS</code> "infinite" dimensions  
  <a href="structsparse_1_1std23_1_1Matrix.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>&gt;</code></p>
+<p><code>#include &quot;<a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for sparse::std23::Matrix&lt; T, N_DIMS &gt;:</div>
 <div class="dyncontent">
@@ -115,9 +115,9 @@ Collaboration diagram for sparse::std23::Matrix&lt; T, N_DIMS &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a311b30536127d906c4d3cbfc95609442"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a311b30536127d906c4d3cbfc95609442">IndexTypeConstShared</a> = details::IndexTypeConstShared&lt; N_DIMS &gt;</td></tr>
+<tr class="memitem:a311b30536127d906c4d3cbfc95609442"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a311b30536127d906c4d3cbfc95609442">IndexTypeConstShared</a> = <a class="el" href="namespacesparse_1_1std23_1_1details.html#aa317c7f1fbcacc0544facf7555f55577">details::IndexTypeConstShared</a>&lt; N_DIMS &gt;</td></tr>
 <tr class="separator:a311b30536127d906c4d3cbfc95609442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1569276775ec7dc4a03f7c1fc08fa8b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> = typename std::map&lt; IndexType&lt; N_DIMS &gt;, T &gt;::const_iterator</td></tr>
+<tr class="memitem:a1569276775ec7dc4a03f7c1fc08fa8b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> = typename std::map&lt; <a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt;, T &gt;::const_iterator</td></tr>
 <tr class="separator:a1569276775ec7dc4a03f7c1fc08fa8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -144,23 +144,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a14bc54a33e4b9e0b7f0e8ff77a66b5d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classsparse_1_1std23_1_1details_1_1ProxyCell.html">details::ProxyCell</a>&lt; T, N_DIMS &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a14bc54a33e4b9e0b7f0e8ff77a66b5d8">operator[]</a> (Idxs... idxs)</td></tr>
 <tr class="separator:a14bc54a33e4b9e0b7f0e8ff77a66b5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">details::CellAccessor</div></td></tr>
-<tr class="memitem:a21d89c77db503b7af977f518dd2fcdae"><td class="memItemLeft" align="right" valign="top">T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a21d89c77db503b7af977f518dd2fcdae">get</a> (IndexType&lt; N_DIMS &gt; const &amp;idx) const noexcept</td></tr>
+<tr class="memitem:a21d89c77db503b7af977f518dd2fcdae"><td class="memItemLeft" align="right" valign="top">T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a21d89c77db503b7af977f518dd2fcdae">get</a> (<a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;idx) const noexcept</td></tr>
 <tr class="separator:a21d89c77db503b7af977f518dd2fcdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a375c8ade3caac173d9572bec196fc394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a375c8ade3caac173d9572bec196fc394">set</a> (IndexType&lt; N_DIMS &gt; const &amp;idx, T const &amp;value) noexcept(noexcept(T(value)))</td></tr>
+<tr class="memitem:a375c8ade3caac173d9572bec196fc394"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a375c8ade3caac173d9572bec196fc394">set</a> (<a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;idx, T const &amp;value) noexcept(noexcept(T(value)))</td></tr>
 <tr class="separator:a375c8ade3caac173d9572bec196fc394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e2789b6025bd4a2d0a038e84d637d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#af3e2789b6025bd4a2d0a038e84d637d3">set</a> (IndexType&lt; N_DIMS &gt; const &amp;idx, T &amp;&amp;value) noexcept(noexcept(T(std::forward&lt; T &gt;(value))))</td></tr>
+<tr class="memitem:af3e2789b6025bd4a2d0a038e84d637d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#af3e2789b6025bd4a2d0a038e84d637d3">set</a> (<a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;idx, T &amp;&amp;value) noexcept(noexcept(T(std::forward&lt; T &gt;(value))))</td></tr>
 <tr class="separator:af3e2789b6025bd4a2d0a038e84d637d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">misc</div></td></tr>
 <tr class="memitem:ad11d957e1291112e87b675ad660717fe"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#ad11d957e1291112e87b675ad660717fe">size</a> () const noexcept</td></tr>
 <tr class="separator:ad11d957e1291112e87b675ad660717fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">iter</div></td></tr>
-<tr class="memitem:a2bd02e8afd69522752605826403de129"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a2bd02e8afd69522752605826403de129">begin</a> () const noexcept</td></tr>
+<tr class="memitem:a2bd02e8afd69522752605826403de129"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a2bd02e8afd69522752605826403de129">begin</a> () const noexcept</td></tr>
 <tr class="separator:a2bd02e8afd69522752605826403de129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92a996f6c96b196941e074a30b931d2d"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a92a996f6c96b196941e074a30b931d2d">end</a> () const noexcept</td></tr>
+<tr class="memitem:a92a996f6c96b196941e074a30b931d2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a92a996f6c96b196941e074a30b931d2d">end</a> () const noexcept</td></tr>
 <tr class="separator:a92a996f6c96b196941e074a30b931d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93e64b482d4989a958aebc0b254e5caf"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a93e64b482d4989a958aebc0b254e5caf">cbegin</a> () const noexcept</td></tr>
+<tr class="memitem:a93e64b482d4989a958aebc0b254e5caf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a93e64b482d4989a958aebc0b254e5caf">cbegin</a> () const noexcept</td></tr>
 <tr class="separator:a93e64b482d4989a958aebc0b254e5caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85d76897a042bf497e90ea5babedf0d8"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a85d76897a042bf497e90ea5babedf0d8">cend</a> () const noexcept</td></tr>
+<tr class="memitem:a85d76897a042bf497e90ea5babedf0d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a85d76897a042bf497e90ea5babedf0d8">cend</a> () const noexcept</td></tr>
 <tr class="separator:a85d76897a042bf497e90ea5babedf0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -203,7 +203,7 @@ struct sparse::std23::Matrix&lt; T, N_DIMS &gt;</div><p>sparse matrix with <code
 template&lt;std::copyable T, size_t N_DIMS&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::const_iterator =  typename std::map&lt;IndexType&lt;N_DIMS&gt;, T&gt;::const_iterator</td>
+          <td class="memname">using <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::const_iterator =  typename std::map&lt;<a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt;N_DIMS&gt;, T&gt;::const_iterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,7 +221,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 template&lt;std::copyable T, size_t N_DIMS&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::IndexTypeConstShared =  details::IndexTypeConstShared&lt;N_DIMS&gt;</td>
+          <td class="memname">using <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::IndexTypeConstShared =  <a class="el" href="namespacesparse_1_1std23_1_1details.html#aa317c7f1fbcacc0544facf7555f55577">details::IndexTypeConstShared</a>&lt;N_DIMS&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -369,7 +369,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::begin </td>
+          <td class="memname"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -399,7 +399,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::cbegin </td>
+          <td class="memname"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::cbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -429,7 +429,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::cend </td>
+          <td class="memname"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::cend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -459,7 +459,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const_iterator <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::end </td>
+          <td class="memname"><a class="el" href="structsparse_1_1std23_1_1Matrix.html#a1569276775ec7dc4a03f7c1fc08fa8b3">const_iterator</a> <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -491,7 +491,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname">T const  &amp; <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::get </td>
           <td>(</td>
-          <td class="paramtype">IndexType&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -503,7 +503,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
+<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html#ae65b2658cc30cb613355be28883f8ae0">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00148">148</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  148</span>                                                            {</div>
@@ -514,6 +514,13 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 <div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> it-&gt;second;</div>
 <div class="line"><span class="lineno">  154</span>  }</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="matrix23_8hpp_source.html#l00132">sparse::std23::Matrix&lt; T, N_DIMS &gt;::operator[]()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structsparse_1_1std23_1_1Matrix_a21d89c77db503b7af977f518dd2fcdae_icgraph.svg" width="376" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a51036f8f82d0df03753976c2b8d1b177" name="a51036f8f82d0df03753976c2b8d1b177"></a>
@@ -579,11 +586,12 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 <p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00116">116</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  116</span>                                                                           {</div>
 <div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
-<div class="line"><span class="lineno">  118</span>      Matrix tmp(other);</div>
+<div class="line"><span class="lineno">  118</span>      <a class="code hl_function" href="structsparse_1_1std23_1_1Matrix.html#a8fac10e435a6677ae4c336fdb965a4d6">Matrix</a> tmp(other);</div>
 <div class="line"><span class="lineno">  119</span>      swap(std::move(tmp));</div>
 <div class="line"><span class="lineno">  120</span>    }</div>
 <div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  122</span>  }</div>
+<div class="ttc" id="astructsparse_1_1std23_1_1Matrix_html_a8fac10e435a6677ae4c336fdb965a4d6"><div class="ttname"><a href="structsparse_1_1std23_1_1Matrix.html#a8fac10e435a6677ae4c336fdb965a4d6">sparse::std23::Matrix::Matrix</a></div><div class="ttdeci">Matrix(T const &amp;default_value) noexcept(noexcept(T(default_value)))</div><div class="ttdef"><b>Definition</b> <a href="matrix23_8hpp_source.html#l00107">matrix23.hpp:107</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -656,9 +664,17 @@ template&lt;typename... Idxs&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  132</span>                                          {</div>
 <div class="line"><span class="lineno">  133</span>    <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>...(idxs) == N_DIMS, <span class="stringliteral">&quot;invalid number of index params&quot;</span>);</div>
 <div class="line"><span class="lineno">  134</span>    IndexType&lt;N_DIMS&gt; index{idxs...};</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> get(index);</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structsparse_1_1std23_1_1Matrix.html#a21d89c77db503b7af977f518dd2fcdae">get</a>(index);</div>
 <div class="line"><span class="lineno">  136</span>  }</div>
+<div class="ttc" id="astructsparse_1_1std23_1_1Matrix_html_a21d89c77db503b7af977f518dd2fcdae"><div class="ttname"><a href="structsparse_1_1std23_1_1Matrix.html#a21d89c77db503b7af977f518dd2fcdae">sparse::std23::Matrix::get</a></div><div class="ttdeci">T const &amp; get(IndexType&lt; N_DIMS &gt; const &amp;idx) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="matrix23_8hpp_source.html#l00148">matrix23.hpp:148</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="matrix23_8hpp_source.html#l00148">sparse::std23::Matrix&lt; T, N_DIMS &gt;::get()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structsparse_1_1std23_1_1Matrix_a0674e24f3eb7f892f8bf88c7bd4e574f_cgraph.svg" width="376" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="af3e2789b6025bd4a2d0a038e84d637d3" name="af3e2789b6025bd4a2d0a038e84d637d3"></a>
@@ -675,7 +691,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">IndexType&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -697,7 +713,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
+<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html#a49d005f6ac09382ae00fc0236883f4c0">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00161">161</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                                                {</div>
@@ -723,7 +739,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="structsparse_1_1std23_1_1Matrix.html">sparse::std23::Matrix</a>&lt; T, N_DIMS &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">IndexType&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacesparse_1_1std23.html#a516694027810950abfb9482e964ce15b">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -745,7 +761,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
+<p>Implements <a class="el" href="structsparse_1_1std23_1_1details_1_1CellAccessor.html#a90774e4f2716ba9b64763537728c8e05">sparse::std23::details::CellAccessor&lt; T, N_DIMS &gt;</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="matrix23_8hpp_source.html#l00155">155</a> of file <a class="el" href="matrix23_8hpp_source.html">matrix23.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  155</span>                                                                                      {</div>
@@ -845,7 +861,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>sparse</b></li><li class="navelem"><b>std23</b></li><li class="navelem"><a class="el" href="structsparse_1_1std23_1_1Matrix.html">Matrix</a></li>
+    <li class="navelem"><a class="el" href="namespacesparse.html">sparse</a></li><li class="navelem"><a class="el" href="namespacesparse_1_1std23.html">std23</a></li><li class="navelem"><a class="el" href="structsparse_1_1std23_1_1Matrix.html">Matrix</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

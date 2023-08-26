@@ -1,0 +1,23 @@
+<map id="src/sparse/matrix23.hpp" name="src/sparse/matrix23.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="337,5,500,36"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,84,56,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="337,35,215,54,70,87,69,81,214,49,336,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="80,84,154,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,39,169,86,168,81,356,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="178,84,243,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="379,39,258,84,256,79,377,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="267,84,314,115"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="395,39,328,79,325,74,392,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="337,84,407,115"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="412,38,391,73,386,70,407,35"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="431,84,499,115"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="430,35,451,70,446,73,425,38"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="524,84,601,115"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="448,34,523,74,521,79,445,39"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="625,84,708,115"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="467,34,612,79,611,84,466,39"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="732,84,785,115"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="500,33,601,52,719,81,717,86,600,58,499,38"/>
+<area shape="rect" id="Node000011" href="$logging_8hpp.html" title=" " alt="" coords="809,84,924,115"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="501,32,795,81,794,86,500,37"/>
+</map>

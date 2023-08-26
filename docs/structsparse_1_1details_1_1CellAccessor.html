@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="sparse_matrix_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-22-gf5a0e29-dirty</span>
+   <div id="projectname">sparse_matrix<span id="projectnumber">&#160;0.0.1-23-gcbfb6d5-dirty</span>
    </div>
    <div id="projectbrief">course c++ developer: hw6 - sparse matrix</div>
   </td>
@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('structsparse_1_1details_1_1CellAccesso
   <div class="headertitle"><div class="title">sparse::details::CellAccessor&lt; T, N_DIMS &gt; Struct Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &quot;<a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for sparse::details::CellAccessor&lt; T, N_DIMS &gt;:</div>
 <div class="dyncontent">
@@ -105,18 +107,16 @@ Inheritance diagram for sparse::details::CellAccessor&lt; T, N_DIMS &gt;:</div>
 <div class="dynheader">
 Collaboration diagram for sparse::details::CellAccessor&lt; T, N_DIMS &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structsparse_1_1details_1_1CellAccessor__coll__graph.svg" width="196" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structsparse_1_1details_1_1CellAccessor__coll__graph.svg" width="230" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0378c30204655da1e24ea23cd315e129"><td class="memItemLeft" align="right" valign="top"><a id="a0378c30204655da1e24ea23cd315e129" name="a0378c30204655da1e24ea23cd315e129"></a>
-virtual T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (IndexType&lt; N_DIMS &gt; const &amp;) const noexcept=0</td></tr>
+<tr class="memitem:a0378c30204655da1e24ea23cd315e129"><td class="memItemLeft" align="right" valign="top">virtual T const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#a0378c30204655da1e24ea23cd315e129">get</a> (<a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;) const noexcept=0</td></tr>
 <tr class="separator:a0378c30204655da1e24ea23cd315e129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4627b0f0f2f3cc2836bc37d8ede579e1"><td class="memItemLeft" align="right" valign="top"><a id="a4627b0f0f2f3cc2836bc37d8ede579e1" name="a4627b0f0f2f3cc2836bc37d8ede579e1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (IndexType&lt; N_DIMS &gt; const &amp;idx, T const &amp;value) noexcept(noexcept(T(value)))=0</td></tr>
+<tr class="memitem:a4627b0f0f2f3cc2836bc37d8ede579e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#a4627b0f0f2f3cc2836bc37d8ede579e1">set</a> (<a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;idx, T const &amp;value) noexcept(noexcept(T(value)))=0</td></tr>
 <tr class="separator:a4627b0f0f2f3cc2836bc37d8ede579e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc6ff3219d50323bc4695bd693743788"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#acc6ff3219d50323bc4695bd693743788">set</a> (IndexType&lt; N_DIMS &gt; const &amp;idx, T &amp;&amp;value) noexcept(noexcept(T(std::forward&lt; T &gt;(value))))=0</td></tr>
+<tr class="memitem:acc6ff3219d50323bc4695bd693743788"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html#acc6ff3219d50323bc4695bd693743788">set</a> (<a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;idx, T &amp;&amp;value) noexcept(noexcept(T(std::forward&lt; T &gt;(value))))=0</td></tr>
 <tr class="separator:acc6ff3219d50323bc4695bd693743788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -124,8 +124,38 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (Inde
 struct sparse::details::CellAccessor&lt; T, N_DIMS &gt;</div>
 <p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00036">36</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0378c30204655da1e24ea23cd315e129" name="a0378c30204655da1e24ea23cd315e129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0378c30204655da1e24ea23cd315e129">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::copyable T, size_t N_DIMS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual T const  &amp; <a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor</a>&lt; T, N_DIMS &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structsparse_1_1Matrix.html#a08c2edf0b7f3e862b4359d81110b07d4">sparse::Matrix&lt; T, N_DIMS &gt;</a>.</p>
+
+</div>
+</div>
 <a id="acc6ff3219d50323bc4695bd693743788" name="acc6ff3219d50323bc4695bd693743788"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc6ff3219d50323bc4695bd693743788">&#9670;&#160;</a></span>set()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6ff3219d50323bc4695bd693743788">&#9670;&#160;</a></span>set() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +168,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
         <tr>
           <td class="memname">virtual void <a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor</a>&lt; T, N_DIMS &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">IndexType&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -164,6 +194,46 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 
 </div>
 </div>
+<a id="a4627b0f0f2f3cc2836bc37d8ede579e1" name="a4627b0f0f2f3cc2836bc37d8ede579e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4627b0f0f2f3cc2836bc37d8ede579e1">&#9670;&#160;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::copyable T, size_t N_DIMS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="structsparse_1_1details_1_1CellAccessor.html">sparse::details::CellAccessor</a>&lt; T, N_DIMS &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacesparse.html#a5d6773c4a79e057bfb7c6bb47054b072">IndexType</a>&lt; N_DIMS &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structsparse_1_1Matrix.html#a279289f2ce74a5753c2de398b19041d8">sparse::Matrix&lt; T, N_DIMS &gt;</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/sparse/<a class="el" href="matrix_8hpp_source.html">matrix.hpp</a></li>
 </ul>
@@ -172,7 +242,7 @@ template&lt;std::copyable T, size_t N_DIMS&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>sparse</b></li><li class="navelem"><a class="el" href="namespacesparse_1_1details.html">details</a></li><li class="navelem"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">CellAccessor</a></li>
+    <li class="navelem"><a class="el" href="namespacesparse.html">sparse</a></li><li class="navelem"><a class="el" href="namespacesparse_1_1details.html">details</a></li><li class="navelem"><a class="el" href="structsparse_1_1details_1_1CellAccessor.html">CellAccessor</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>
