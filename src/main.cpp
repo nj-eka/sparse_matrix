@@ -6,7 +6,7 @@
  * @brief hw-06
  *
  * [task](06_homework.pdf)
- * ![Sequence diagram](../puml/sequence_diagram.svg)
+ * ![Sequence diagram](puml/sequence_diagram.svg)
  */
 int main() {
   sparse::Matrix<int> matrix;

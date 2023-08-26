@@ -117,7 +117,7 @@ class ShiftIndex<T, N_DIMS, N_DIMS> {
  * @tparam T copyable type of matrix element
  * @tparam N_DIMS number of matrix dimensions (>= 1)
  *
- * ![class diagram](../puml/class_diagram.svg)
+ * ![class diagram](puml/class_diagram.svg)
  */
 template <std::copyable T, size_t N_DIMS>
 struct Matrix final : details::CellAccessor<T, N_DIMS> {
