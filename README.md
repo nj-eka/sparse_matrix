@@ -83,5 +83,5 @@ for(auto c: matrix)
 ```
 
 ### details
-- [class diagram](puml/class_diagram.svg)
-- [sequence diagram](puml/sequence_diagram.svg)
+- [class diagram](docs/puml/class_diagram.svg)
+- [sequence diagram](docs/puml/sequence_diagram.svg)
