@@ -15,7 +15,6 @@ TEST(sparse_matrix23, create_empty) {
 TEST(sparse_matrix23, check_default_value) {
   constexpr int default_value = -1;
   Matrix<int> matrix(default_value);
-  // it seems gtest macro is not designed to support operator[](...) yet
   // ошибка: в макрос «ASSERT_EQ» передано 3 аргументов, но используется только 2 ASSERT_EQ(matrix[0, 0], default_value);
   ASSERT_EQ((matrix[0, 0]), default_value);
   ASSERT_EQ((matrix[1000, 20000]), default_value);
