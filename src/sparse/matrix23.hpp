@@ -129,15 +129,13 @@ struct Matrix final : private details::CellAccessor<T, N_DIMS> {
   /** @name index */
   ///@{
   template <typename... Idxs>
-  T const& operator[](Idxs... idxs) const {
-    static_assert(sizeof...(idxs) == N_DIMS, "invalid number of index params");
+  T const& operator[](Idxs... idxs) const requires (sizeof...(idxs) == N_DIMS) {
     IndexType<N_DIMS> index{idxs...};
     return get(index);
   }
 
   template <typename... Idxs>
-  details::ProxyCell<T, N_DIMS> operator[](Idxs... idxs) {
-    static_assert(sizeof...(idxs) == N_DIMS, "invalid number of index params");
+  details::ProxyCell<T, N_DIMS> operator[](Idxs... idxs) requires (sizeof...(idxs) == N_DIMS) {
     auto sp_index = std::shared_ptr<IndexType<N_DIMS>>(new IndexType<N_DIMS>{static_cast<size_t>(idxs)...});
     return details::ProxyCell<T, N_DIMS>(this, sp_index);
   }

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include <sstream>
 #include <algorithm>
+#include <sstream>
 
 #include "matrix23.hpp"
 
@@ -15,7 +15,8 @@ TEST(sparse_matrix23, create_empty) {
 TEST(sparse_matrix23, check_default_value) {
   constexpr int default_value = -1;
   Matrix<int> matrix(default_value);
-  // ошибка: в макрос «ASSERT_EQ» передано 3 аргументов, но используется только 2 ASSERT_EQ(matrix[0, 0], default_value);
+  // ошибка: в макрос «ASSERT_EQ» передано 3 аргументов, но используется только 2 ASSERT_EQ(matrix[0, 0],
+  // default_value);
   ASSERT_EQ((matrix[0, 0]), default_value);
   ASSERT_EQ((matrix[1000, 20000]), default_value);
   ASSERT_EQ(matrix.size(), 0);
@@ -42,8 +43,7 @@ TEST(sparse_matrix23, iteration1) {
   Matrix<int> matrix;
   matrix[100, 200] = 314;
   std::stringstream ss;
-  for(auto const& cell: matrix)     
-  {         
+  for (auto const& cell : matrix) {
     auto const& [idx, v] = cell;
     auto const& [x, y] = idx;
     ss << x << ":" << y << "=" << v;
